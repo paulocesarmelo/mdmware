@@ -58,7 +58,7 @@ class TestHelloWorld {
 	static ResourceManager resourceManager
 	
 	@BeforeAll
-	static void setup() {
+	static void main(String[] args) {
 		
 		Manager managerDef = EMFLoader.loadFirst("hello.xmi", Manager)
 		eventManager = new EventManager()
@@ -66,7 +66,7 @@ class TestHelloWorld {
 		resourceManager = mainManager.resourceManager
 		
 		mainManager.start()
-		
+		test();
 	}
 	
 	@AfterAll
@@ -75,7 +75,7 @@ class TestHelloWorld {
 	}
 	
 	@Test
-	void test() {
+	static void test() {
 		TestFrontEnd frontend = new TestFrontEnd(mainManager)
 		frontend.testCall(new Object())
 	}
