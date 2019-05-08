@@ -44,5 +44,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
+	<classpathentry kind="lib" path="/home/paulo/img.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
