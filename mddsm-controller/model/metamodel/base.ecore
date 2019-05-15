@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="base" nsURI="http://www.inf.ufg.br/mestrado/controller/base"
-    nsPrefix="controller.base">
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="base" nsURI="http://www.inf.ufg.br/controller/base" nsPrefix="controller.base">
   <eClassifiers xsi:type="ecore:EClass" name="Manager" eSuperTypes="#//metadata/Annotable">
     <eStructuralFeatures xsi:type="ecore:EReference" name="iface" lowerBound="1" eType="#//common/Interface"
         containment="true"/>
@@ -39,11 +38,12 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="iface" lowerBound="1" eType="#//common/Interface"
         derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScriptManager"/>
-  <eClassifiers xsi:type="ecore:EClass" name="RepositoryManager"/>
-  <eClassifiers xsi:type="ecore:EClass" name="EventManager">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="listerners"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptManager">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="interpreter" eType="#//script/ScriptInterpreter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="processor" eType="#//script/ScriptProcessor"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="RepositoryManager"/>
+  <eClassifiers xsi:type="ecore:EClass" name="EventManager"/>
   <eSubpackages name="context" nsURI="http://www.inf.ufg.br/mestrado/controller/base/context"
       nsPrefix="controller.base.context">
     <eClassifiers xsi:type="ecore:EClass" name="State" eSuperTypes="#//common/Bindable">
@@ -219,10 +219,18 @@
     <eClassifiers xsi:type="ecore:EClass" name="ScriptProcessor"/>
   </eSubpackages>
   <eSubpackages name="dsc">
-    <eClassifiers xsi:type="ecore:EClass" name="IMGenerator"/>
-    <eClassifiers xsi:type="ecore:EClass" name="BuildIM"/>
+    <eClassifiers xsi:type="ecore:EClass" name="IMGenerator">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//dsc/RepositoryManager"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="build" eType="#//dsc/BuildIM"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BuildIM">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="dsc" eType="#//dsc/DSC"/>
+    </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IMExecutor"/>
     <eClassifiers xsi:type="ecore:EClass" name="RepositoryManager"/>
-    <eClassifiers xsi:type="ecore:EClass" name="IntentModel"/>
+    <eClassifiers xsi:type="ecore:EClass" name="DSC">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="impl" lowerBound="1"
+          eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eClassifiers>
   </eSubpackages>
 </ecore:EPackage>

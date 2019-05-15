@@ -39,10 +39,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="iface" lowerBound="1" eType="#//common/Interface"
         derived="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="ScriptManager">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="scripts" upperBound="-1"
-        eType="#//script/Script"/>
-  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ScriptManager"/>
   <eClassifiers xsi:type="ecore:EClass" name="RepositoryManager"/>
   <eClassifiers xsi:type="ecore:EClass" name="EventManager">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="listerners"/>
@@ -218,21 +215,14 @@
   </eSubpackages>
   <eSubpackages name="script" nsURI="http://www.inf.ufg.br/mestrado/controller/base/script"
       nsPrefix="controller.base.script">
-    <eClassifiers xsi:type="ecore:EClass" name="Script">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="cmd">
-        <eGenericType eClassifier="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList">
-          <eTypeArguments/>
-        </eGenericType>
-      </eStructuralFeatures>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ScriptInterpreter"/>
+    <eClassifiers xsi:type="ecore:EClass" name="ScriptProcessor"/>
   </eSubpackages>
   <eSubpackages name="dsc">
     <eClassifiers xsi:type="ecore:EClass" name="IMGenerator"/>
     <eClassifiers xsi:type="ecore:EClass" name="BuildIM"/>
     <eClassifiers xsi:type="ecore:EClass" name="IMExecutor"/>
     <eClassifiers xsi:type="ecore:EClass" name="RepositoryManager"/>
-    <eClassifiers xsi:type="ecore:EClass" name="ScriptInterpreter">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="script" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="IntentModel"/>
   </eSubpackages>
 </ecore:EPackage>

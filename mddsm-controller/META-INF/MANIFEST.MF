@@ -9,9 +9,6 @@ Bundle-Vendor: %providerName
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Export-Package: base,
- base.autonomic,
- base.autonomic.impl,
- base.autonomic.util,
  base.common,
  base.common.impl,
  base.common.util,
@@ -25,6 +22,12 @@ Export-Package: base,
  base.policy,
  base.policy.impl,
  base.policy.util,
+ base.script,
+ base.script.impl,
+ base.script.util,
+ base.dsc,
+ base.dsc.impl,
+ base.dsc.util,
  base.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
