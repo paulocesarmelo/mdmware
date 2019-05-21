@@ -39,7 +39,6 @@
         derived="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ScriptManager">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="interpreter" eType="#//script/ScriptInterpreter"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="processor" eType="#//script/ScriptProcessor"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RepositoryManager"/>
@@ -215,7 +214,6 @@
   </eSubpackages>
   <eSubpackages name="script" nsURI="http://www.inf.ufg.br/mestrado/controller/base/script"
       nsPrefix="controller.base.script">
-    <eClassifiers xsi:type="ecore:EClass" name="ScriptInterpreter"/>
     <eClassifiers xsi:type="ecore:EClass" name="ScriptProcessor"/>
   </eSubpackages>
   <eSubpackages name="dsc">
@@ -223,12 +221,10 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="repository" eType="#//dsc/RepositoryManager"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="build" eType="#//dsc/BuildIM"/>
     </eClassifiers>
-    <eClassifiers xsi:type="ecore:EClass" name="BuildIM">
-      <eStructuralFeatures xsi:type="ecore:EReference" name="dsc" eType="#//dsc/DSC"/>
-    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="BuildIM"/>
     <eClassifiers xsi:type="ecore:EClass" name="IMExecutor"/>
     <eClassifiers xsi:type="ecore:EClass" name="RepositoryManager"/>
-    <eClassifiers xsi:type="ecore:EClass" name="DSC">
+    <eClassifiers xsi:type="ecore:EClass" name="IM">
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="impl" lowerBound="1"
           eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eClassifiers>
