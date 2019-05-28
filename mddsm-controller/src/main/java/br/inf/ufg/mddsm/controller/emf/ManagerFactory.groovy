@@ -1,7 +1,6 @@
 package br.inf.ufg.mddsm.controller.emf
 
 import base.Manager
-import br.inf.ufg.mddsm.controller.autonomic.AutonomicManager
 import br.inf.ufg.mddsm.controller.manager.MainManager
 import br.inf.ufg.mddsm.controller.manager.SignalHandlerManager
 import br.inf.ufg.mddsm.controller.policy.PolicyEvaluationManager
@@ -20,11 +19,6 @@ class ManagerFactory {
 
         Metadata metadata = metadataFactory.createMetadata(manager)
         MainManager mainManager = new MainManager(metadata, signalHandlerManager, resourceManager, new StateManager(manager.stateManager.stateTypes))
-
-        if (manager.autonomicManager) {
-            AutonomicManager mape = new AutonomicManager(manager.autonomicManager, mainManager.getContext())
-            signalHandlerManager.register(-1, mape.getSignalHandler())
-        }
 
         if (manager.policyManager) {
             PolicyEvaluationManager pem = new PolicyEvaluationManager(manager.policyManager)
