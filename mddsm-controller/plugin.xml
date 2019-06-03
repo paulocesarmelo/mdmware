@@ -9,49 +9,56 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
-            uri="http://www.inf.ufg.br/mestrado/sb/base"
-            class="base.impl.BasePackageImpl"
-            genModel="src/main/resources/metamodel/base.genmodel"/>
+            uri="http://www.inf.ufg.br/controller/base"
+            class="base.BasePackage"
+            genModel="src/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
-            uri="http://www.inf.ufg.br/mestrado/sb/base/context"
-            class="base.context.impl.ContextPackageImpl"
-            genModel="src/main/resources/metamodel/base.genmodel"/>
+            uri="http://www.inf.ufg.br/mestrado/controller/base/context"
+            class="base.context.ContextPackage"
+            genModel="src/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
-            uri="http://www.inf.ufg.br/mestrado/sb/base/metadata"
-            class="base.metadata.impl.MetadataPackageImpl"
-            genModel="src/main/resources/metamodel/base.genmodel"/>
+            uri="http://www.inf.ufg.br/mestrado/controller/base/metadata"
+            class="base.metadata.MetadataPackage"
+            genModel="src/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
-            uri="http://www.inf.ufg.br/mestrado/sb/base/autonomic"
-            class="base.autonomic.impl.AutonomicPackageImpl"
-            genModel="src/main/resources/metamodel/base.genmodel"/>
+            uri="http://www.inf.ufg.br/mestrado/controller/base/policy"
+            class="base.policy.PolicyPackage"
+            genModel="src/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
-            uri="http://www.inf.ufg.br/mestrado/sb/base/policy"
-            class="base.policy.impl.PolicyPackageImpl"
-            genModel="src/main/resources/metamodel/base.genmodel"/>
+            uri="http://www.inf.ufg.br/mestrado/controller/base/common"
+            class="base.common.CommonPackage"
+            genModel="src/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated base -->
       <package
-            uri="http://www.inf.ufg.br/mestrado/sb/base/common"
-            class="base.common.impl.CommonPackageImpl"
-            genModel="src/main/resources/metamodel/base.genmodel"/>
+            uri="http://www.inf.ufg.br/mestrado/controller/base/script"
+            class="base.script.ScriptPackage"
+            genModel="src/test/resources/base.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/controller/base/img"
+            class="base.img.ImgPackage"
+            genModel="src/test/resources/base.genmodel"/>
+   </extension>
 </plugin>

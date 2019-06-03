@@ -1,8 +1,8 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: controller;singleton:=true
-Automatic-Module-Name: sb
+Bundle-SymbolicName: mddsm-controller-old;singleton:=true
+Automatic-Module-Name: mddsm-controller-old
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
@@ -15,6 +15,9 @@ Export-Package: base,
  base.context,
  base.context.impl,
  base.context.util,
+ base.img,
+ base.img.impl,
+ base.img.util,
  base.impl,
  base.metadata,
  base.metadata.impl,
@@ -25,9 +28,6 @@ Export-Package: base,
  base.script,
  base.script.impl,
  base.script.util,
- base.dsc,
- base.dsc.impl,
- base.dsc.util,
  base.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport

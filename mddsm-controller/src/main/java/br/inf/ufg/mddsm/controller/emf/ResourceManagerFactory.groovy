@@ -1,15 +1,15 @@
 package br.inf.ufg.mddsm.controller.emf
 
 import base.Instance
-import base.InstanceResourceManager
-import base.ResourceManager
+//import base.InstanceResourceManager
+//import base.ResourceManager
 import br.inf.ufg.mddsm.controller.manager.MainManager
 import br.inf.ufg.mddsm.controller.resource.bridge.IBroker
 
 class ResourceManagerFactory {
     ManagedResourceFactory objectFactory = new ManagedResourceFactory()
 
-    public br.inf.ufg.mddsm.controller.resource.ResourceManager createObjectManager(ResourceManager resourceManager) {
+   /* public br.inf.ufg.mddsm.controller.resource.ResourceManager createObjectManager(ResourceManager resourceManager) {
         doCreateObjectManager(resourceManager)
     }
 
@@ -26,6 +26,6 @@ class ResourceManagerFactory {
 
     private br.inf.ufg.mddsm.controller.resource.ResourceManager doCreateObjectManager(ResourceManager resourceManager) {
         null
-    }
+    }*/
 
 }

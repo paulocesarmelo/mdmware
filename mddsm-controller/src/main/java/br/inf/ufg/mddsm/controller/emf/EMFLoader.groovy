@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.xmi.impl.EcoreResourceFactoryImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 import base.impl.BasePackageImpl
 
+
 class EMFLoader {
     private static ResourceSet resourceSet
     public static ResourceSet getResourceSet() {
