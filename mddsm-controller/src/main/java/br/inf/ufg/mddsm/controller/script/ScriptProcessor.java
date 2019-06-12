@@ -25,6 +25,12 @@ public class ScriptProcessor {
 		this.commands = commands;
 	}
 	
+	public void addNFProperties() {
+		
+	}
+	
+	
+	
 	public void generateIMs() {
 	
 		Iterator<String> i = commands.iterator();

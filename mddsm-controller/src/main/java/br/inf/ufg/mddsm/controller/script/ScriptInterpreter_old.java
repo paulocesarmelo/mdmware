@@ -5,12 +5,17 @@ import java.util.List;
 
 import org.eclipse.emf.compare.Diff;
 
-public class ScriptInterpreter {
+public class ScriptInterpreter_old {
 
 	private List<Diff> diffs;
+	private ControlScript script;
 	
-	public void interpreter(List<Diff> diffs) {
-		this.diffs = diffs;
+	public ScriptInterpreter_old() {
+		
+	}
+	
+	public void interpreter(ControlScript script) {
+		
 		List commands = extractCommand();
 		
 		ScriptProcessor processor = new ScriptProcessor();

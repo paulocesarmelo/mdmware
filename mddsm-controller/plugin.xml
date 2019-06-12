@@ -61,4 +61,12 @@
             class="base.img.ImgPackage"
             genModel="src/test/resources/base.genmodel"/>
    </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated dsk -->
+      <package
+            uri="http://www.inf.ufg.br/controller/dsc"
+            class="dsc.DscPackage"
+            genModel="src/test/resources/dsk.genmodel"/>
+   </extension>
+
 </plugin>

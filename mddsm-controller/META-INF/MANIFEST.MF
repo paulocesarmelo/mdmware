@@ -28,7 +28,10 @@ Export-Package: base,
  base.script,
  base.script.impl,
  base.script.util,
- base.util
+ base.util,
+ dsc,
+ dsc.impl,
+ dsc.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

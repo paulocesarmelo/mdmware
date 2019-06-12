@@ -11,6 +11,8 @@ import br.inf.ufg.mddsm.controller.resource.AbstractTouchpoint;
 import br.inf.ufg.mddsm.controller.resource.EventListener;
 import br.inf.ufg.mddsm.controller.resource.Executable;
 import br.inf.ufg.mddsm.controller.resource.ResourceManager;
+import br.inf.ufg.mddsm.controller.script.ControlScript;
+import br.inf.ufg.mddsm.controller.script.ScriptManager;
 import br.inf.ufg.mddsm.controller.state.StateManager;
 
 public class MainManager extends AbstractTouchpoint implements EventListener, Executable {
@@ -74,6 +76,16 @@ public class MainManager extends AbstractTouchpoint implements EventListener, Ex
         resourceManager.stop();
     }
 
+    public void process(ControlScript script) {
+    	long t1 = System.nanoTime();
+    	
+    	ScriptManager scriptManager = new ScriptManager();
+    	scriptManager.process(script);
+    	
+    	long t2 = System.nanoTime();
+    	System.out.println("SE("+script+"):" + TimeUnit.MILLISECONDS.convert((t2-t1), TimeUnit.NANOSECONDS) + "ms");
+    }
+    
     /**
      * evaluating the signal against the frameworks to
      * find the appropriate framework

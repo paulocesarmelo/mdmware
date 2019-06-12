@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dsk:dsk xmi:version="2.0"
+<dsc:dsk xmi:version="2.0"
     xmlns:xmi="http://www.omg.org/XMI"
-    xmlns:dsk="http://www.inf.ufg.br/controller/dsc"
-    domain="comm">
+    xmlns:dsc="http://www.inf.ufg.br/controller/dsc">
   <procedures
       id="0001"
       name="SendBasic">
@@ -16,39 +15,36 @@
       id="002"
       name="SendSecure">
     <dsc name="Send">
-      <impl
-          id="sendMedia"
-          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
       <reference
           name="Encrypt">
         <impl
             id="simpleEncrypt"
             body="br.inf.ufg.mddsm.controller.eu.Encrypt"/>
       </reference>
+      <impl
+          id="sendMedia"
+          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
     </dsc>
   </procedures>
   <procedures
       id="003"
       name="SendCompress">
     <dsc name="Send">
-      <impl
-          id="sendMedia"
-          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
       <reference
           name="Compress">
         <impl
             id="simpleCompress"
             body="br.inf.ufg.mddsm.controller.eu.Compress"/>
       </reference>
+      <impl
+          id="sendMedia"
+          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
     </dsc>
   </procedures>
   <procedures
       id="004"
       name="SendSecComp">
     <dsc name="Send">
-      <impl
-          id="sendMedia"
-          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
       <reference
           name="Encrypt">
         <impl
@@ -61,6 +57,9 @@
             id="simpleCompress"
             body="br.inf.ufg.mddsm.controller.eu.Compress"/>
       </reference>
+      <impl
+          id="sendMedia"
+          body="br.inf.ufg.mddsm.controller.eu.SendMedia"/>
     </dsc>
   </procedures>
   <procedures
@@ -81,4 +80,4 @@
           body="br.inf.ufg.mddsm.controller.eu.GZIPCompress"/>
     </dsc>
   </procedures>
-</dsk:dsk>
+</dsc:dsk>

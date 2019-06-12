@@ -9,8 +9,7 @@ import org.eclipse.emf.ecore.EObject
 
 import groovy.util.logging.Log4j2
 
-
-@Log4j2
+//@Log4j2
 class Command {
     final private Diff diff
 
@@ -54,6 +53,7 @@ class Command {
             addMetapropertyToMap(metadata, "kindInteraction", value)
             addMetapropertyToMap(metadata, "arisingBehavior", value)
         }
+		
         return metadata
     }
 
