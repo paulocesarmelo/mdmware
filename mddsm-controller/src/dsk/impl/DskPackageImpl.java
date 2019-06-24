@@ -1,13 +1,19 @@
 /**
  */
-package dsc.impl;
+package dsk.impl;
 
-import dsc.DscFactory;
-import dsc.DscPackage;
-import dsc.EExecutionUnit;
-import dsc.EKind;
-import dsc.EProcedure;
-import dsc.DSK;
+import dsk.DskFactory;
+import dsk.DskPackage;
+import dsk.EExecutionUnit;
+import dsk.EKind;
+import dsk.EProcedure;
+import dsk.EDSC;
+
+import dsk.common.CommonPackage;
+
+import dsk.common.impl.CommonPackageImpl;
+
+import dsk.Dsk;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -23,7 +29,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DscPackageImpl extends EPackageImpl implements DscPackage {
+public class DskPackageImpl extends EPackageImpl implements DskPackage {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -70,12 +76,12 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
-	 * @see dsc.DscPackage#eNS_URI
+	 * @see Dsk.DskPackage#eNS_URI
 	 * @see #init()
 	 * @generated
 	 */
-	private DscPackageImpl() {
-		super(eNS_URI, DscFactory.eINSTANCE);
+	private DskPackageImpl() {
+		super(eNS_URI, DskFactory.eINSTANCE);
 	}
 
 	/**
@@ -88,7 +94,7 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model, and for any others upon which it depends.
 	 *
-	 * <p>This method is used to initialize {@link DscPackage#eINSTANCE} when that field is accessed.
+	 * <p>This method is used to initialize {@link DskPackage#eINSTANCE} when that field is accessed.
 	 * Clients should not invoke it directly. Instead, they should simply access that field to obtain the package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -97,27 +103,33 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
-	public static DscPackage init() {
-		if (isInited) return (DscPackage)EPackage.Registry.INSTANCE.getEPackage(DscPackage.eNS_URI);
+	public static DskPackage init() {
+		if (isInited) return (DskPackage)EPackage.Registry.INSTANCE.getEPackage(DskPackage.eNS_URI);
 
 		// Obtain or create and register package
-		Object registeredDscPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
-		DscPackageImpl theDscPackage = registeredDscPackage instanceof DscPackageImpl ? (DscPackageImpl)registeredDscPackage : new DscPackageImpl();
+		Object registeredDskPackage = EPackage.Registry.INSTANCE.get(eNS_URI);
+		DskPackageImpl theDskPackage = registeredDskPackage instanceof DskPackageImpl ? (DskPackageImpl)registeredDskPackage : new DskPackageImpl();
 
 		isInited = true;
 
+		// Obtain or create and register interdependencies
+		Object registeredPackage = EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+		CommonPackageImpl theCommonPackage = (CommonPackageImpl)(registeredPackage instanceof CommonPackageImpl ? registeredPackage : CommonPackage.eINSTANCE);
+
 		// Create package meta-data objects
-		theDscPackage.createPackageContents();
+		theDskPackage.createPackageContents();
+		theCommonPackage.createPackageContents();
 
 		// Initialize created meta-data
-		theDscPackage.initializePackageContents();
+		theDskPackage.initializePackageContents();
+		theCommonPackage.initializePackageContents();
 
 		// Mark meta-data to indicate it can't be changed
-		theDscPackage.freeze();
+		theDskPackage.freeze();
 
 		// Update the registry and return the package
-		EPackage.Registry.INSTANCE.put(DscPackage.eNS_URI, theDscPackage);
-		return theDscPackage;
+		EPackage.Registry.INSTANCE.put(DskPackage.eNS_URI, theDskPackage);
+		return theDskPackage;
 	}
 
 	/**
@@ -143,8 +155,17 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getdsk_Procedures() {
+	public EReference getdsk_Dscs() {
 		return (EReference)dskEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getdsk_Procedures() {
+		return (EReference)dskEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -179,8 +200,26 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEProcedure_Dsc() {
+	public EReference getEProcedure_Classifier() {
 		return (EReference)eProcedureEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEProcedure_Impl() {
+		return (EReference)eProcedureEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEProcedure_Dependencies() {
+		return (EReference)eProcedureEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -215,17 +254,8 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getEDSC_Impl() {
+	public EReference getEDSC_Parameters() {
 		return (EReference)edscEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEDSC_Reference() {
-		return (EReference)edscEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -269,8 +299,8 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DscFactory getDscFactory() {
-		return (DscFactory)getEFactoryInstance();
+	public DskFactory getDskFactory() {
+		return (DskFactory)getEFactoryInstance();
 	}
 
 	/**
@@ -294,18 +324,20 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 		// Create classes and their features
 		dskEClass = createEClass(DSK);
 		createEAttribute(dskEClass, DSK__DOMAIN);
+		createEReference(dskEClass, DSK__DSCS);
 		createEReference(dskEClass, DSK__PROCEDURES);
 
 		eProcedureEClass = createEClass(EPROCEDURE);
 		createEAttribute(eProcedureEClass, EPROCEDURE__ID);
 		createEAttribute(eProcedureEClass, EPROCEDURE__NAME);
-		createEReference(eProcedureEClass, EPROCEDURE__DSC);
+		createEReference(eProcedureEClass, EPROCEDURE__CLASSIFIER);
+		createEReference(eProcedureEClass, EPROCEDURE__IMPL);
+		createEReference(eProcedureEClass, EPROCEDURE__DEPENDENCIES);
 
 		edscEClass = createEClass(EDSC);
 		createEAttribute(edscEClass, EDSC__NAME);
 		createEAttribute(edscEClass, EDSC__KIND);
-		createEReference(edscEClass, EDSC__IMPL);
-		createEReference(edscEClass, EDSC__REFERENCE);
+		createEReference(edscEClass, EDSC__PARAMETERS);
 
 		eExecutionUnitEClass = createEClass(EEXECUTION_UNIT);
 		createEAttribute(eExecutionUnitEClass, EEXECUTION_UNIT__ID);
@@ -338,6 +370,12 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 		setNsPrefix(eNS_PREFIX);
 		setNsURI(eNS_URI);
 
+		// Obtain other dependent packages
+		CommonPackage theCommonPackage = (CommonPackage)EPackage.Registry.INSTANCE.getEPackage(CommonPackage.eNS_URI);
+
+		// Add subpackages
+		getESubpackages().add(theCommonPackage);
+
 		// Create type parameters
 
 		// Set bounds for type parameters
@@ -345,20 +383,22 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 		// Add supertypes to classes
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(dskEClass, DSK.class, "dsk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getdsk_Domain(), ecorePackage.getEString(), "domain", null, 0, 1, DSK.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getdsk_Procedures(), this.getEProcedure(), null, "procedures", null, 0, -1, DSK.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(dskEClass, Dsk.class, "dsk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getdsk_Domain(), ecorePackage.getEString(), "domain", null, 0, 1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getdsk_Dscs(), this.getEDSC(), null, "dscs", null, 0, -1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getdsk_Procedures(), this.getEProcedure(), null, "procedures", null, 0, -1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eProcedureEClass, EProcedure.class, "EProcedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEProcedure_Id(), ecorePackage.getEString(), "id", null, 0, 1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getEProcedure_Name(), ecorePackage.getEString(), "name", null, 0, 1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEProcedure_Dsc(), this.getEDSC(), null, "dsc", null, 0, -1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEProcedure_Classifier(), this.getEDSC(), null, "classifier", null, 1, 1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEProcedure_Impl(), this.getEExecutionUnit(), null, "impl", null, 0, -1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEProcedure_Dependencies(), this.getEDSC(), null, "dependencies", null, 0, -1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(edscEClass, dsc.EDSC.class, "EDSC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEDSC_Name(), ecorePackage.getEString(), "name", null, 0, 1, dsc.EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEDSC_Kind(), this.getEKind(), "kind", null, 0, 1, dsc.EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEDSC_Impl(), this.getEExecutionUnit(), null, "impl", null, 0, 1, dsc.EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEDSC_Reference(), this.getEDSC(), null, "reference", null, 0, -1, dsc.EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(edscEClass, EDSC.class, "EDSC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEDSC_Name(), ecorePackage.getEString(), "name", null, 0, 1, EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEDSC_Kind(), this.getEKind(), "kind", null, 0, 1, EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEDSC_Parameters(), theCommonPackage.getParameter(), null, "parameters", null, 0, -1, EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eExecutionUnitEClass, EExecutionUnit.class, "EExecutionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEExecutionUnit_Id(), ecorePackage.getEString(), "id", null, 0, 1, EExecutionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -373,4 +413,4 @@ public class DscPackageImpl extends EPackageImpl implements DscPackage {
 		createResource(eNS_URI);
 	}
 
-} //DscPackageImpl
+} //DskPackageImpl

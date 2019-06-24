@@ -1,8 +1,8 @@
 /**
  */
-package dsc.util;
+package dsk.util;
 
-import dsc.*;
+import dsk.*;
 
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -19,17 +19,17 @@ import org.eclipse.emf.ecore.util.Switch;
  * until a non-null result is returned,
  * which is the result of the switch.
  * <!-- end-user-doc -->
- * @see dsc.DscPackage
+ * @see Dsk.DskPackage
  * @generated
  */
-public class DscSwitch<T> extends Switch<T> {
+public class DskSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static DscPackage modelPackage;
+	protected static DskPackage modelPackage;
 
 	/**
 	 * Creates an instance of the switch.
@@ -37,9 +37,9 @@ public class DscSwitch<T> extends Switch<T> {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DscSwitch() {
+	public DskSwitch() {
 		if (modelPackage == null) {
-			modelPackage = DscPackage.eINSTANCE;
+			modelPackage = DskPackage.eINSTANCE;
 		}
 	}
 
@@ -66,25 +66,25 @@ public class DscSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case DscPackage.DSK: {
-				DSK dsk = (DSK)theEObject;
+			case DskPackage.DSK: {
+				Dsk dsk = (Dsk)theEObject;
 				T result = casedsk(dsk);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DscPackage.EPROCEDURE: {
+			case DskPackage.EPROCEDURE: {
 				EProcedure eProcedure = (EProcedure)theEObject;
 				T result = caseEProcedure(eProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DscPackage.EDSC: {
+			case DskPackage.EDSC: {
 				EDSC edsc = (EDSC)theEObject;
 				T result = caseEDSC(edsc);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DscPackage.EEXECUTION_UNIT: {
+			case DskPackage.EEXECUTION_UNIT: {
 				EExecutionUnit eExecutionUnit = (EExecutionUnit)theEObject;
 				T result = caseEExecutionUnit(eExecutionUnit);
 				if (result == null) result = defaultCase(theEObject);
@@ -105,7 +105,7 @@ public class DscSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casedsk(DSK object) {
+	public T casedsk(Dsk object) {
 		return null;
 	}
 
@@ -170,4 +170,4 @@ public class DscSwitch<T> extends Switch<T> {
 		return null;
 	}
 
-} //DscSwitch
+} //DskSwitch

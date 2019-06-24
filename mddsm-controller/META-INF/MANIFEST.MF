@@ -29,9 +29,12 @@ Export-Package: base,
  base.script.impl,
  base.script.util,
  base.util,
- dsc,
- dsc.impl,
- dsc.util
+ dsk,
+ dsk.common,
+ dsk.common.impl,
+ dsk.common.util,
+ dsk.impl,
+ dsk.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport
 Bundle-ActivationPolicy: lazy

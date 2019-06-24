@@ -64,9 +64,16 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated dsk -->
       <package
-            uri="http://www.inf.ufg.br/controller/dsc"
-            class="dsc.DscPackage"
-            genModel="src/test/resources/dsk.genmodel"/>
+            uri="http://www.inf.ufg.br/controller/dsk"
+            class="dsk.DskPackage"
+            genModel="resource/metamodel/dsk.genmodel"/>
    </extension>
 
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated dsk -->
+      <package
+            uri="http://www.inf.ufg.br/controller/dsk/common"
+            class="dsk.common.CommonPackage"
+            genModel="resource/metamodel/dsk.genmodel"/>
+   </extension>
 </plugin>

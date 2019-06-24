@@ -7,13 +7,11 @@ import com.rits.cloning.*;
 import br.inf.ufg.mddsm.controller.img.Repository;
 import dsk.EDSC;
 
-public class NaiveGenerator implements Generator{
+public class NaiveGenerator_OLD implements Generator{
 	
 	private static Cloner cloner = new Cloner();
 	
 	public ArrayList<IntentModel> generateModels(DSC initDSC) {
-		
-		System.out.println("Generating models...");
 		
 		/** Collection to store final set of models */
 		ArrayList<IntentModel> matchingModels = new ArrayList<IntentModel>();
@@ -22,35 +20,33 @@ public class NaiveGenerator implements Generator{
 		ArrayList<Procedure> matchingProcedures = Repository.getInstance().getProceduresWithDSC(initDSC);
 		System.out.println(initDSC.getName() + ": " + matchingProcedures.size());
 		
-		
-		
 		if (matchingProcedures.isEmpty()){
-			System.out.println("Repository is empty!");
 			return null;
 		}
 		
 		for (int i = 0; i < matchingProcedures.size(); i++){
-			System.out.println(matchingProcedures.get(i).getClass());
+			
 			
 			/** Temporary collection of models for current level */
 			ArrayList<IntentModel> tempMatchingModels = new ArrayList<IntentModel>();
 			ArrayList<DSC> dependencies = matchingProcedures.get(i).getDependency();
-		
 			
-			System.out.println("Procedure name: "+ matchingProcedures.get(i).getName());
+			System.out.println("Dependency name: "+ matchingProcedures.get(i).getName());
 			
-			System.out.println("Number of dependencies: "+dependencies.size());
+			System.out.println("NUmber of dependencies: "+dependencies.size());
 			
 			/** If no dependencies, return model with only current procedure */
 			if (dependencies.isEmpty()){
-				System.out.println("No dependencies!");
 				matchingModels.add(new IntentModel(matchingProcedures.get(i)));
 			} else {
 				/** If further dependencies, make recursive call, then join */
 				ArrayList<IntentModel> subModels = null;
 				
-				for (int j = 0; j < dependencies.size(); j++){				
-										
+				for (int j = 0; j < dependencies.size(); j++){
+					
+					EDSC dscDep = dependencies.get(j);
+					System.out.println(dscDep.getName());
+					
 					System.out.println(matchingProcedures.get(i).getName() + " is calling: " + dependencies.get(j).getName());
 					
 					subModels = generateModels(dependencies.get(j));
@@ -76,7 +72,7 @@ public class NaiveGenerator implements Generator{
 			/**Add lower layer models to final collection*/
 			matchingModels.addAll(tempMatchingModels);
 		}
-		System.out.println("Finalizing the generation of models...");
+		System.out.println("Finishing generate models...");
 		return matchingModels;
 		
 	}
@@ -98,7 +94,33 @@ public class NaiveGenerator implements Generator{
 			}
 		}
 		return newModels;
-	}	
-
-	
+	}
+	/*
+	public class Repository extends ProceduresRepository {
+		
+		ArrayList<Procedure> procedures = new ArrayList<Procedure>();
+		
+		public Repository(ArrayList<Procedure> procedures){
+			this.procedures = procedures;
+		}
+		
+		@Override
+		public ArrayList<Procedure> getProceduresWithDSC(DSC dsc){
+			
+			ArrayList<Procedure> matchingProcedures = new ArrayList<Procedure>();
+			for (int i = 0; i < procedures.size(); i++){
+				if (procedures.get(i).getClassifier().equals(dsc))
+					matchingProcedures.add(procedures.remove(i--));
+			}
+			return matchingProcedures;
+		}
+		
+		public void addProcedures(ArrayList<Procedure> procedures){
+			this.procedures = procedures;
+		}
+		
+		public ArrayList<Procedure> getAllProcedures(){
+			return procedures;
+		}
+	}*/
 }

@@ -1,8 +1,8 @@
 /**
  */
-package dsc.impl;
+package dsk.impl;
 
-import dsc.*;
+import dsk.*;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -19,24 +19,24 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
  * <!-- end-user-doc -->
  * @generated
  */
-public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
+public class DskFactoryImpl extends EFactoryImpl implements DskFactory {
 	/**
 	 * Creates the default factory implementation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public static DscFactory init() {
+	public static DskFactory init() {
 		try {
-			DscFactory theDscFactory = (DscFactory)EPackage.Registry.INSTANCE.getEFactory(DscPackage.eNS_URI);
-			if (theDscFactory != null) {
-				return theDscFactory;
+			DskFactory theDskFactory = (DskFactory)EPackage.Registry.INSTANCE.getEFactory(DskPackage.eNS_URI);
+			if (theDskFactory != null) {
+				return theDskFactory;
 			}
 		}
 		catch (Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
-		return new DscFactoryImpl();
+		return new DskFactoryImpl();
 	}
 
 	/**
@@ -45,7 +45,7 @@ public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DscFactoryImpl() {
+	public DskFactoryImpl() {
 		super();
 	}
 
@@ -57,10 +57,10 @@ public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case DscPackage.DSK: return createdsk();
-			case DscPackage.EPROCEDURE: return createEProcedure();
-			case DscPackage.EDSC: return createEDSC();
-			case DscPackage.EEXECUTION_UNIT: return createEExecutionUnit();
+			case DskPackage.DSK: return createdsk();
+			case DskPackage.EPROCEDURE: return createEProcedure();
+			case DskPackage.EDSC: return createEDSC();
+			case DskPackage.EEXECUTION_UNIT: return createEExecutionUnit();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -74,7 +74,7 @@ public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case DscPackage.EKIND:
+			case DskPackage.EKIND:
 				return createEKindFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -89,7 +89,7 @@ public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case DscPackage.EKIND:
+			case DskPackage.EKIND:
 				return convertEKindToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
@@ -101,7 +101,7 @@ public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DSK createdsk() {
+	public Dsk createdsk() {
 		dskImpl dsk = new dskImpl();
 		return dsk;
 	}
@@ -161,8 +161,8 @@ public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DscPackage getDscPackage() {
-		return (DscPackage)getEPackage();
+	public DskPackage getDskPackage() {
+		return (DskPackage)getEPackage();
 	}
 
 	/**
@@ -172,8 +172,8 @@ public class DscFactoryImpl extends EFactoryImpl implements DscFactory {
 	 * @generated
 	 */
 	@Deprecated
-	public static DscPackage getPackage() {
-		return DscPackage.eINSTANCE;
+	public static DskPackage getPackage() {
+		return DskPackage.eINSTANCE;
 	}
 
-} //DscFactoryImpl
+} //DskFactoryImpl

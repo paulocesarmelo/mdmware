@@ -3,7 +3,10 @@ package br.inf.ufg.mddsm.controller.img;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DSC implements Serializable{
+import dsk.EDSC;
+import dsk.impl.EDSCImpl;
+
+public class DSC extends EDSCImpl implements Serializable,EDSC{
 	/**
 	 * 
 	 */
@@ -33,10 +36,11 @@ public class DSC implements Serializable{
 		this.prefix = "";
 	}
 
+	@Override
 	public String getName() {
 		return name;
 	}
-
+	@Override
 	public void setName(String name) {
 		this.name = name;
 	}
@@ -57,10 +61,10 @@ public class DSC implements Serializable{
 		this.prefix = prefix;
 	}
 
-	public ArrayList<DSC> getParameters() {
+	public ArrayList<DSC> getAllParameters() {
 		return parameters;
 	}
-
+	
 	public void setParameters(ArrayList<DSC> parameters) {
 		this.parameters = parameters;
 	}

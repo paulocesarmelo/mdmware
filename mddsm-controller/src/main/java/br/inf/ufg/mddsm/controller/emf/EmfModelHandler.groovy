@@ -8,16 +8,16 @@ import org.eclipse.emf.ecore.resource.ResourceSet
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl
 
-import dsc.DSK
-import dsc.DscPackage
-import dsc.EProcedure
+import dsk.Dsk
+import dsk.DskPackage
+import dsk.EProcedure
 
 
 
 @Log4j2
 class EmfModelHandler implements ModelHandler {
 
-	DSK myDSK
+	Dsk myDSK
 	
     Resource load(URI filepath, String eNS_URI, EPackage ePackageInstance ) {
         
@@ -38,7 +38,7 @@ class EmfModelHandler implements ModelHandler {
         def root =  resource.getContents()?.get(0)
 	
 		try {
-			myDSK = (DSK) resource.getContents().get(0)
+			myDSK = (Dsk) resource.getContents().get(0)
 			println(myDSK.getProcedures().getAt(0))
 		}catch(Exception e) {
 			e.printStackTrace()
@@ -53,10 +53,10 @@ class EmfModelHandler implements ModelHandler {
 
     }
 	
-	DSK load(URI filepath) {
+	Dsk load(URI filepath) {
 		
-		EPackage ePackageInstance = DscPackage.eINSTANCE
-		String eNS_URI = DscPackage.eNS_URI
+		EPackage ePackageInstance = DskPackage.eINSTANCE
+		String eNS_URI = DskPackage.eNS_URI
 		
 		EPackage.Registry.INSTANCE.put(eNS_URI, ePackageInstance)
 		// Register the XMI resource factory for the .website extension
@@ -75,7 +75,7 @@ class EmfModelHandler implements ModelHandler {
 		def root =  resource.getContents()?.get(0)
 	
 		try {
-			myDSK = (DSK) resource.getContents().get(0)
+			myDSK = (Dsk) resource.getContents().get(0)
 			println(myDSK.getProcedures().getAt(0))
 		}catch(Exception e) {
 			e.printStackTrace()

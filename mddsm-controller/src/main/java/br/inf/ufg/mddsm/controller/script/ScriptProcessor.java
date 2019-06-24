@@ -13,6 +13,8 @@ import br.inf.ufg.mddsm.controller.img.IntentModel;
 import br.inf.ufg.mddsm.controller.img.NaiveGenerator;
 import br.inf.ufg.mddsm.controller.img.NaiveSelector;
 import br.inf.ufg.mddsm.controller.img.Negotiate;
+import br.inf.ufg.mddsm.controller.img.Type;
+import br.inf.ufg.mddsm.controller.img.NaiveValidator;
 
 /*
  * Class responsible for insert operational semantics
@@ -20,9 +22,17 @@ import br.inf.ufg.mddsm.controller.img.Negotiate;
 public class ScriptProcessor {
 	
 	List<String> commands;
+	ArrayList<IntentModel> matchingModels = null;
+	ArrayList<IntentModel> validModels = null;
+	IntentModel bestModel = null;
+	
+	//user preference
+	DSC dsc = new DSC("Encrypt", Type.OPER);
 	
 	public void processor(List<String> commands) {
 		this.commands = commands;
+		System.out.println("Processing script...");
+		generateIMs();
 	}
 	
 	public void addNFProperties() {
@@ -33,18 +43,25 @@ public class ScriptProcessor {
 	
 	public void generateIMs() {
 	
+		System.out.println("Generating IMs...");
+		
 		Iterator<String> i = commands.iterator();
 		
 		while(i.hasNext()) {
 		
 			// Get initial DSC
-			DSC initialDSC = new DSC(i.next(), null);
+			DSC initialDSC = new DSC(i.next(), Type.OPER);
+			
+			System.out.println("DSC initial: "+initialDSC.getName());
 			
 			// Find all models which match command
-			ArrayList<IntentModel> matchingModels = (new NaiveGenerator()).generateModels(initialDSC);
+			matchingModels = (new NaiveGenerator()).generateModels(initialDSC);
+			
+			// Find valid models based on user preferences
+			validModels = (new NaiveValidator()).validateModels(matchingModels, dsc);
 			
 			// Find the best model based on cost
-			IntentModel bestModel = (new NaiveSelector()).getBestModel(matchingModels);
+			bestModel = (new NaiveSelector()).getBestModel(validModels);
 		
 			printIMs(matchingModels, bestModel);
 			

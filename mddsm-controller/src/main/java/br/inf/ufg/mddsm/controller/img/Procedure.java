@@ -6,7 +6,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Procedure implements Serializable{
+import dsk.EProcedure;
+import dsk.impl.EProcedureImpl;
+
+public class Procedure extends EProcedureImpl implements Serializable, EProcedure{
 	/**
 	 * 
 	 */
@@ -49,7 +52,7 @@ public class Procedure implements Serializable{
 	}
 	public DSC getClassifier() {
 		return classifier;
-	}
+	}		
 	public void setClassifier(DSC classifier) {
 		this.classifier = classifier;
 	}

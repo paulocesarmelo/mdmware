@@ -1,18 +1,22 @@
 package br.inf.ufg.mddsm.controller.script
 
-import org.eclipse.emf.compare.Diff
 
 class ScriptInterpreter{
 	
-	private List<Diff> diffs;
-	
 	public void interpreter(ControlScript script) {
 		
-		List<Command> commands = script.commands
+		//List<Command> commands = script.commands
 						
-		commands.each{
+		/*commands.each{
 			interpret($(it))
-		}
+		}*/
+		
+		println("Interpreting script... ")
+		
+		List<String> commands = script.commandsList
+		
+		new ScriptProcessor().processor(commands)
+		
 	}
 	
 	public void interpret(Command command) {

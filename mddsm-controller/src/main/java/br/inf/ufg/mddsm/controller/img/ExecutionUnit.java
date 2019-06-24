@@ -8,8 +8,9 @@ import org.codehaus.janino.Scanner.ScanException;
 import org.codehaus.janino.ScriptEvaluator;
 
 import br.inf.ufg.mddsm.controller.img.Call;
+import dsk.impl.EExecutionUnitImpl;
 
-public class ExecutionUnit implements Serializable{
+public class ExecutionUnit extends EExecutionUnitImpl implements Serializable{
 	/**
 	 * 
 	 */

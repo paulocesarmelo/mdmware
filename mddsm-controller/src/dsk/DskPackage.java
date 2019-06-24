@@ -1,12 +1,14 @@
 /**
  */
-package dsc;
+package dsk;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+
+import dsk.impl.DskPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,18 +22,18 @@ import org.eclipse.emf.ecore.EReference;
  *   <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * @see dsc.DscFactory
+ * @see Dsk.DskFactory
  * @model kind="package"
  * @generated
  */
-public interface DscPackage extends EPackage {
+public interface DskPackage extends EPackage {
 	/**
 	 * The package name.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNAME = "dsc";
+	String eNAME = "dsk";
 
 	/**
 	 * The package namespace URI.
@@ -39,7 +41,7 @@ public interface DscPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://www.inf.ufg.br/controller/dsc";
+	String eNS_URI = "http://www.inf.ufg.br/controller/dsk";
 
 	/**
 	 * The package namespace name.
@@ -47,7 +49,7 @@ public interface DscPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "dsc";
+	String eNS_PREFIX = "dsk";
 
 	/**
 	 * The singleton instance of the package.
@@ -55,14 +57,14 @@ public interface DscPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	DscPackage eINSTANCE = dsc.impl.DscPackageImpl.init();
+	DskPackage eINSTANCE = DskPackageImpl.init();
 
 	/**
-	 * The meta object id for the '{@link dsc.impl.dskImpl <em>dsk</em>}' class.
+	 * The meta object id for the '{@link Dsk.impl.dskImpl <em>dsk</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsc.impl.dskImpl
-	 * @see dsc.impl.DscPackageImpl#getdsk()
+	 * @see Dsk.impl.dskImpl
+	 * @see Dsk.impl.DskPackageImpl#getdsk()
 	 * @generated
 	 */
 	int DSK = 0;
@@ -77,13 +79,22 @@ public interface DscPackage extends EPackage {
 	int DSK__DOMAIN = 0;
 
 	/**
+	 * The feature id for the '<em><b>Dscs</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int DSK__DSCS = 1;
+
+	/**
 	 * The feature id for the '<em><b>Procedures</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int DSK__PROCEDURES = 1;
+	int DSK__PROCEDURES = 2;
 
 	/**
 	 * The number of structural features of the '<em>dsk</em>' class.
@@ -92,7 +103,7 @@ public interface DscPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DSK_FEATURE_COUNT = 2;
+	int DSK_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>dsk</em>' class.
@@ -104,11 +115,11 @@ public interface DscPackage extends EPackage {
 	int DSK_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dsc.impl.EProcedureImpl <em>EProcedure</em>}' class.
+	 * The meta object id for the '{@link Dsk.impl.EProcedureImpl <em>EProcedure</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsc.impl.EProcedureImpl
-	 * @see dsc.impl.DscPackageImpl#getEProcedure()
+	 * @see Dsk.impl.EProcedureImpl
+	 * @see Dsk.impl.DskPackageImpl#getEProcedure()
 	 * @generated
 	 */
 	int EPROCEDURE = 1;
@@ -132,13 +143,31 @@ public interface DscPackage extends EPackage {
 	int EPROCEDURE__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Dsc</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Classifier</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EPROCEDURE__DSC = 2;
+	int EPROCEDURE__CLASSIFIER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Impl</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPROCEDURE__IMPL = 3;
+
+	/**
+	 * The feature id for the '<em><b>Dependencies</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int EPROCEDURE__DEPENDENCIES = 4;
 
 	/**
 	 * The number of structural features of the '<em>EProcedure</em>' class.
@@ -147,7 +176,7 @@ public interface DscPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EPROCEDURE_FEATURE_COUNT = 3;
+	int EPROCEDURE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>EProcedure</em>' class.
@@ -159,11 +188,11 @@ public interface DscPackage extends EPackage {
 	int EPROCEDURE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dsc.impl.EDSCImpl <em>EDSC</em>}' class.
+	 * The meta object id for the '{@link Dsk.impl.EDSCImpl <em>EDSC</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsc.impl.EDSCImpl
-	 * @see dsc.impl.DscPackageImpl#getEDSC()
+	 * @see Dsk.impl.EDSCImpl
+	 * @see Dsk.impl.DskPackageImpl#getEDSC()
 	 * @generated
 	 */
 	int EDSC = 2;
@@ -187,22 +216,13 @@ public interface DscPackage extends EPackage {
 	int EDSC__KIND = 1;
 
 	/**
-	 * The feature id for the '<em><b>Impl</b></em>' containment reference.
+	 * The feature id for the '<em><b>Parameters</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int EDSC__IMPL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Reference</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int EDSC__REFERENCE = 3;
+	int EDSC__PARAMETERS = 2;
 
 	/**
 	 * The number of structural features of the '<em>EDSC</em>' class.
@@ -211,7 +231,7 @@ public interface DscPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int EDSC_FEATURE_COUNT = 4;
+	int EDSC_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>EDSC</em>' class.
@@ -223,11 +243,11 @@ public interface DscPackage extends EPackage {
 	int EDSC_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dsc.impl.EExecutionUnitImpl <em>EExecution Unit</em>}' class.
+	 * The meta object id for the '{@link Dsk.impl.EExecutionUnitImpl <em>EExecution Unit</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsc.impl.EExecutionUnitImpl
-	 * @see dsc.impl.DscPackageImpl#getEExecutionUnit()
+	 * @see Dsk.impl.EExecutionUnitImpl
+	 * @see Dsk.impl.DskPackageImpl#getEExecutionUnit()
 	 * @generated
 	 */
 	int EEXECUTION_UNIT = 3;
@@ -269,183 +289,205 @@ public interface DscPackage extends EPackage {
 	int EEXECUTION_UNIT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link dsc.EKind <em>EKind</em>}' enum.
+	 * The meta object id for the '{@link Dsk.EKind <em>EKind</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see dsc.EKind
-	 * @see dsc.impl.DscPackageImpl#getEKind()
+	 * @see Dsk.EKind
+	 * @see Dsk.impl.DskPackageImpl#getEKind()
 	 * @generated
 	 */
 	int EKIND = 4;
 
 
 	/**
-	 * Returns the meta object for class '{@link dsc.DSK <em>dsk</em>}'.
+	 * Returns the meta object for class '{@link Dsk.dsk <em>dsk</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>dsk</em>'.
-	 * @see dsc.DSK
+	 * @see Dsk.dsk
 	 * @generated
 	 */
 	EClass getdsk();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsc.DSK#getDomain <em>Domain</em>}'.
+	 * Returns the meta object for the attribute '{@link Dsk.dsk#getDomain <em>Domain</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Domain</em>'.
-	 * @see dsc.DSK#getDomain()
+	 * @see Dsk.dsk#getDomain()
 	 * @see #getdsk()
 	 * @generated
 	 */
 	EAttribute getdsk_Domain();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsc.DSK#getProcedures <em>Procedures</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Dsk.dsk#getDscs <em>Dscs</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Dscs</em>'.
+	 * @see Dsk.dsk#getDscs()
+	 * @see #getdsk()
+	 * @generated
+	 */
+	EReference getdsk_Dscs();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link Dsk.dsk#getProcedures <em>Procedures</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Procedures</em>'.
-	 * @see dsc.DSK#getProcedures()
+	 * @see Dsk.dsk#getProcedures()
 	 * @see #getdsk()
 	 * @generated
 	 */
 	EReference getdsk_Procedures();
 
 	/**
-	 * Returns the meta object for class '{@link dsc.EProcedure <em>EProcedure</em>}'.
+	 * Returns the meta object for class '{@link Dsk.EProcedure <em>EProcedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>EProcedure</em>'.
-	 * @see dsc.EProcedure
+	 * @see Dsk.EProcedure
 	 * @generated
 	 */
 	EClass getEProcedure();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsc.EProcedure#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link Dsk.EProcedure#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see dsc.EProcedure#getId()
+	 * @see Dsk.EProcedure#getId()
 	 * @see #getEProcedure()
 	 * @generated
 	 */
 	EAttribute getEProcedure_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsc.EProcedure#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link Dsk.EProcedure#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see dsc.EProcedure#getName()
+	 * @see Dsk.EProcedure#getName()
 	 * @see #getEProcedure()
 	 * @generated
 	 */
 	EAttribute getEProcedure_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsc.EProcedure#getDsc <em>Dsc</em>}'.
+	 * Returns the meta object for the reference '{@link Dsk.EProcedure#getClassifier <em>Classifier</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Dsc</em>'.
-	 * @see dsc.EProcedure#getDsc()
+	 * @return the meta object for the reference '<em>Classifier</em>'.
+	 * @see Dsk.EProcedure#getClassifier()
 	 * @see #getEProcedure()
 	 * @generated
 	 */
-	EReference getEProcedure_Dsc();
+	EReference getEProcedure_Classifier();
 
 	/**
-	 * Returns the meta object for class '{@link dsc.EDSC <em>EDSC</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Dsk.EProcedure#getImpl <em>Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Impl</em>'.
+	 * @see Dsk.EProcedure#getImpl()
+	 * @see #getEProcedure()
+	 * @generated
+	 */
+	EReference getEProcedure_Impl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Dsk.EProcedure#getDependencies <em>Dependencies</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Dependencies</em>'.
+	 * @see Dsk.EProcedure#getDependencies()
+	 * @see #getEProcedure()
+	 * @generated
+	 */
+	EReference getEProcedure_Dependencies();
+
+	/**
+	 * Returns the meta object for class '{@link Dsk.EDSC <em>EDSC</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>EDSC</em>'.
-	 * @see dsc.EDSC
+	 * @see Dsk.EDSC
 	 * @generated
 	 */
 	EClass getEDSC();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsc.EDSC#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link Dsk.EDSC#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see dsc.EDSC#getName()
+	 * @see Dsk.EDSC#getName()
 	 * @see #getEDSC()
 	 * @generated
 	 */
 	EAttribute getEDSC_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsc.EDSC#getKind <em>Kind</em>}'.
+	 * Returns the meta object for the attribute '{@link Dsk.EDSC#getKind <em>Kind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Kind</em>'.
-	 * @see dsc.EDSC#getKind()
+	 * @see Dsk.EDSC#getKind()
 	 * @see #getEDSC()
 	 * @generated
 	 */
 	EAttribute getEDSC_Kind();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link dsc.EDSC#getImpl <em>Impl</em>}'.
+	 * Returns the meta object for the containment reference list '{@link Dsk.EDSC#getParameters <em>Parameters</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Impl</em>'.
-	 * @see dsc.EDSC#getImpl()
+	 * @return the meta object for the containment reference list '<em>Parameters</em>'.
+	 * @see Dsk.EDSC#getParameters()
 	 * @see #getEDSC()
 	 * @generated
 	 */
-	EReference getEDSC_Impl();
+	EReference getEDSC_Parameters();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link dsc.EDSC#getReference <em>Reference</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Reference</em>'.
-	 * @see dsc.EDSC#getReference()
-	 * @see #getEDSC()
-	 * @generated
-	 */
-	EReference getEDSC_Reference();
-
-	/**
-	 * Returns the meta object for class '{@link dsc.EExecutionUnit <em>EExecution Unit</em>}'.
+	 * Returns the meta object for class '{@link Dsk.EExecutionUnit <em>EExecution Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>EExecution Unit</em>'.
-	 * @see dsc.EExecutionUnit
+	 * @see Dsk.EExecutionUnit
 	 * @generated
 	 */
 	EClass getEExecutionUnit();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsc.EExecutionUnit#getId <em>Id</em>}'.
+	 * Returns the meta object for the attribute '{@link Dsk.EExecutionUnit#getId <em>Id</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see dsc.EExecutionUnit#getId()
+	 * @see Dsk.EExecutionUnit#getId()
 	 * @see #getEExecutionUnit()
 	 * @generated
 	 */
 	EAttribute getEExecutionUnit_Id();
 
 	/**
-	 * Returns the meta object for the attribute '{@link dsc.EExecutionUnit#getBody <em>Body</em>}'.
+	 * Returns the meta object for the attribute '{@link Dsk.EExecutionUnit#getBody <em>Body</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Body</em>'.
-	 * @see dsc.EExecutionUnit#getBody()
+	 * @see Dsk.EExecutionUnit#getBody()
 	 * @see #getEExecutionUnit()
 	 * @generated
 	 */
 	EAttribute getEExecutionUnit_Body();
 
 	/**
-	 * Returns the meta object for enum '{@link dsc.EKind <em>EKind</em>}'.
+	 * Returns the meta object for enum '{@link Dsk.EKind <em>EKind</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for enum '<em>EKind</em>'.
-	 * @see dsc.EKind
+	 * @see Dsk.EKind
 	 * @generated
 	 */
 	EEnum getEKind();
@@ -457,7 +499,7 @@ public interface DscPackage extends EPackage {
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
-	DscFactory getDscFactory();
+	DskFactory getDskFactory();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -474,11 +516,11 @@ public interface DscPackage extends EPackage {
 	 */
 	interface Literals {
 		/**
-		 * The meta object literal for the '{@link dsc.impl.dskImpl <em>dsk</em>}' class.
+		 * The meta object literal for the '{@link Dsk.impl.dskImpl <em>dsk</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsc.impl.dskImpl
-		 * @see dsc.impl.DscPackageImpl#getdsk()
+		 * @see Dsk.impl.dskImpl
+		 * @see Dsk.impl.DskPackageImpl#getdsk()
 		 * @generated
 		 */
 		EClass DSK = eINSTANCE.getdsk();
@@ -492,6 +534,14 @@ public interface DscPackage extends EPackage {
 		EAttribute DSK__DOMAIN = eINSTANCE.getdsk_Domain();
 
 		/**
+		 * The meta object literal for the '<em><b>Dscs</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference DSK__DSCS = eINSTANCE.getdsk_Dscs();
+
+		/**
 		 * The meta object literal for the '<em><b>Procedures</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -500,11 +550,11 @@ public interface DscPackage extends EPackage {
 		EReference DSK__PROCEDURES = eINSTANCE.getdsk_Procedures();
 
 		/**
-		 * The meta object literal for the '{@link dsc.impl.EProcedureImpl <em>EProcedure</em>}' class.
+		 * The meta object literal for the '{@link Dsk.impl.EProcedureImpl <em>EProcedure</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsc.impl.EProcedureImpl
-		 * @see dsc.impl.DscPackageImpl#getEProcedure()
+		 * @see Dsk.impl.EProcedureImpl
+		 * @see Dsk.impl.DskPackageImpl#getEProcedure()
 		 * @generated
 		 */
 		EClass EPROCEDURE = eINSTANCE.getEProcedure();
@@ -526,19 +576,35 @@ public interface DscPackage extends EPackage {
 		EAttribute EPROCEDURE__NAME = eINSTANCE.getEProcedure_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Dsc</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Classifier</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EPROCEDURE__DSC = eINSTANCE.getEProcedure_Dsc();
+		EReference EPROCEDURE__CLASSIFIER = eINSTANCE.getEProcedure_Classifier();
 
 		/**
-		 * The meta object literal for the '{@link dsc.impl.EDSCImpl <em>EDSC</em>}' class.
+		 * The meta object literal for the '<em><b>Impl</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsc.impl.EDSCImpl
-		 * @see dsc.impl.DscPackageImpl#getEDSC()
+		 * @generated
+		 */
+		EReference EPROCEDURE__IMPL = eINSTANCE.getEProcedure_Impl();
+
+		/**
+		 * The meta object literal for the '<em><b>Dependencies</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference EPROCEDURE__DEPENDENCIES = eINSTANCE.getEProcedure_Dependencies();
+
+		/**
+		 * The meta object literal for the '{@link Dsk.impl.EDSCImpl <em>EDSC</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Dsk.impl.EDSCImpl
+		 * @see Dsk.impl.DskPackageImpl#getEDSC()
 		 * @generated
 		 */
 		EClass EDSC = eINSTANCE.getEDSC();
@@ -560,27 +626,19 @@ public interface DscPackage extends EPackage {
 		EAttribute EDSC__KIND = eINSTANCE.getEDSC_Kind();
 
 		/**
-		 * The meta object literal for the '<em><b>Impl</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Parameters</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference EDSC__IMPL = eINSTANCE.getEDSC_Impl();
+		EReference EDSC__PARAMETERS = eINSTANCE.getEDSC_Parameters();
 
 		/**
-		 * The meta object literal for the '<em><b>Reference</b></em>' containment reference list feature.
+		 * The meta object literal for the '{@link Dsk.impl.EExecutionUnitImpl <em>EExecution Unit</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference EDSC__REFERENCE = eINSTANCE.getEDSC_Reference();
-
-		/**
-		 * The meta object literal for the '{@link dsc.impl.EExecutionUnitImpl <em>EExecution Unit</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see dsc.impl.EExecutionUnitImpl
-		 * @see dsc.impl.DscPackageImpl#getEExecutionUnit()
+		 * @see Dsk.impl.EExecutionUnitImpl
+		 * @see Dsk.impl.DskPackageImpl#getEExecutionUnit()
 		 * @generated
 		 */
 		EClass EEXECUTION_UNIT = eINSTANCE.getEExecutionUnit();
@@ -602,15 +660,15 @@ public interface DscPackage extends EPackage {
 		EAttribute EEXECUTION_UNIT__BODY = eINSTANCE.getEExecutionUnit_Body();
 
 		/**
-		 * The meta object literal for the '{@link dsc.EKind <em>EKind</em>}' enum.
+		 * The meta object literal for the '{@link Dsk.EKind <em>EKind</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see dsc.EKind
-		 * @see dsc.impl.DscPackageImpl#getEKind()
+		 * @see Dsk.EKind
+		 * @see Dsk.impl.DskPackageImpl#getEKind()
 		 * @generated
 		 */
 		EEnum EKIND = eINSTANCE.getEKind();
 
 	}
 
-} //DscPackage
+} //DskPackage

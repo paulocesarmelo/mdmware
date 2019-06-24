@@ -1,9 +1,9 @@
 /**
  */
-package dsc.impl;
+package dsk.impl;
 
-import dsc.DscPackage;
-import dsc.EExecutionUnit;
+import dsk.DskPackage;
+import dsk.EExecutionUnit;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -20,8 +20,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsc.impl.EExecutionUnitImpl#getId <em>Id</em>}</li>
- *   <li>{@link dsc.impl.EExecutionUnitImpl#getBody <em>Body</em>}</li>
+ *   <li>{@link dsk.impl.EExecutionUnitImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsk.impl.EExecutionUnitImpl#getBody <em>Body</em>}</li>
  * </ul>
  *
  * @generated
@@ -83,7 +83,7 @@ public class EExecutionUnitImpl extends MinimalEObjectImpl.Container implements 
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DscPackage.Literals.EEXECUTION_UNIT;
+		return DskPackage.Literals.EEXECUTION_UNIT;
 	}
 
 	/**
@@ -104,7 +104,7 @@ public class EExecutionUnitImpl extends MinimalEObjectImpl.Container implements 
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.EEXECUTION_UNIT__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.EEXECUTION_UNIT__ID, oldId, id));
 	}
 
 	/**
@@ -125,7 +125,7 @@ public class EExecutionUnitImpl extends MinimalEObjectImpl.Container implements 
 		String oldBody = body;
 		body = newBody;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.EEXECUTION_UNIT__BODY, oldBody, body));
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.EEXECUTION_UNIT__BODY, oldBody, body));
 	}
 
 	/**
@@ -136,9 +136,9 @@ public class EExecutionUnitImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DscPackage.EEXECUTION_UNIT__ID:
+			case DskPackage.EEXECUTION_UNIT__ID:
 				return getId();
-			case DscPackage.EEXECUTION_UNIT__BODY:
+			case DskPackage.EEXECUTION_UNIT__BODY:
 				return getBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -152,10 +152,10 @@ public class EExecutionUnitImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DscPackage.EEXECUTION_UNIT__ID:
+			case DskPackage.EEXECUTION_UNIT__ID:
 				setId((String)newValue);
 				return;
-			case DscPackage.EEXECUTION_UNIT__BODY:
+			case DskPackage.EEXECUTION_UNIT__BODY:
 				setBody((String)newValue);
 				return;
 		}
@@ -170,10 +170,10 @@ public class EExecutionUnitImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DscPackage.EEXECUTION_UNIT__ID:
+			case DskPackage.EEXECUTION_UNIT__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case DscPackage.EEXECUTION_UNIT__BODY:
+			case DskPackage.EEXECUTION_UNIT__BODY:
 				setBody(BODY_EDEFAULT);
 				return;
 		}
@@ -188,9 +188,9 @@ public class EExecutionUnitImpl extends MinimalEObjectImpl.Container implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DscPackage.EEXECUTION_UNIT__ID:
+			case DskPackage.EEXECUTION_UNIT__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case DscPackage.EEXECUTION_UNIT__BODY:
+			case DskPackage.EEXECUTION_UNIT__BODY:
 				return BODY_EDEFAULT == null ? body != null : !BODY_EDEFAULT.equals(body);
 		}
 		return super.eIsSet(featureID);

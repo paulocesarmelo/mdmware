@@ -7,7 +7,7 @@ public class NaiveSelector implements Selector{
 	public IntentModel getBestModel(ArrayList<IntentModel> models){
 		IntentModel bestModel = null;
 		int bestModelCost = Integer.MAX_VALUE;
-		
+		System.out.println("models size" + models.size());
 		for (int i = 0; i < models.size(); i++){
 			int cost = modelCost(models.get(i));
 			if (cost < bestModelCost){

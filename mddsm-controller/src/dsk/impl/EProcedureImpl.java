@@ -1,10 +1,11 @@
 /**
  */
-package dsc.impl;
+package dsk.impl;
 
-import dsc.DscPackage;
-import dsc.EDSC;
-import dsc.EProcedure;
+import dsk.DskPackage;
+import dsk.EDSC;
+import dsk.EExecutionUnit;
+import dsk.EProcedure;
 
 import java.util.Collection;
 
@@ -20,6 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -30,9 +32,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsc.impl.EProcedureImpl#getId <em>Id</em>}</li>
- *   <li>{@link dsc.impl.EProcedureImpl#getName <em>Name</em>}</li>
- *   <li>{@link dsc.impl.EProcedureImpl#getDsc <em>Dsc</em>}</li>
+ *   <li>{@link dsk.impl.EProcedureImpl#getId <em>Id</em>}</li>
+ *   <li>{@link dsk.impl.EProcedureImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsk.impl.EProcedureImpl#getClassifier <em>Classifier</em>}</li>
+ *   <li>{@link dsk.impl.EProcedureImpl#getImpl <em>Impl</em>}</li>
+ *   <li>{@link dsk.impl.EProcedureImpl#getDependencies <em>Dependencies</em>}</li>
  * </ul>
  *
  * @generated
@@ -79,14 +83,34 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getDsc() <em>Dsc</em>}' containment reference list.
+	 * The cached value of the '{@link #getClassifier() <em>Classifier</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getDsc()
+	 * @see #getClassifier()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<EDSC> dsc;
+	protected EDSC classifier;
+
+	/**
+	 * The cached value of the '{@link #getImpl() <em>Impl</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EExecutionUnit> impl;
+
+	/**
+	 * The cached value of the '{@link #getDependencies() <em>Dependencies</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDependencies()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EDSC> dependencies;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -104,7 +128,7 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DscPackage.Literals.EPROCEDURE;
+		return DskPackage.Literals.EPROCEDURE;
 	}
 
 	/**
@@ -125,7 +149,7 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 		String oldId = id;
 		id = newId;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.EPROCEDURE__ID, oldId, id));
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.EPROCEDURE__ID, oldId, id));
 	}
 
 	/**
@@ -146,7 +170,7 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.EPROCEDURE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.EPROCEDURE__NAME, oldName, name));
 	}
 
 	/**
@@ -154,11 +178,61 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<EDSC> getDsc() {
-		if (dsc == null) {
-			dsc = new EObjectContainmentEList<EDSC>(EDSC.class, this, DscPackage.EPROCEDURE__DSC);
+	public EDSC getClassifier() {
+		if (classifier != null && classifier.eIsProxy()) {
+			InternalEObject oldClassifier = (InternalEObject)classifier;
+			classifier = (EDSC)eResolveProxy(oldClassifier);
+			if (classifier != oldClassifier) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, DskPackage.EPROCEDURE__CLASSIFIER, oldClassifier, classifier));
+			}
 		}
-		return dsc;
+		return classifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EDSC basicGetClassifier() {
+		return classifier;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setClassifier(EDSC newClassifier) {
+		EDSC oldClassifier = classifier;
+		classifier = newClassifier;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.EPROCEDURE__CLASSIFIER, oldClassifier, classifier));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EExecutionUnit> getImpl() {
+		if (impl == null) {
+			impl = new EObjectContainmentEList<EExecutionUnit>(EExecutionUnit.class, this, DskPackage.EPROCEDURE__IMPL);
+		}
+		return impl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EDSC> getDependencies() {
+		if (dependencies == null) {
+			dependencies = new EObjectResolvingEList<EDSC>(EDSC.class, this, DskPackage.EPROCEDURE__DEPENDENCIES);
+		}
+		return dependencies;
 	}
 
 	/**
@@ -169,8 +243,8 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DscPackage.EPROCEDURE__DSC:
-				return ((InternalEList<?>)getDsc()).basicRemove(otherEnd, msgs);
+			case DskPackage.EPROCEDURE__IMPL:
+				return ((InternalEList<?>)getImpl()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -183,12 +257,17 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DscPackage.EPROCEDURE__ID:
+			case DskPackage.EPROCEDURE__ID:
 				return getId();
-			case DscPackage.EPROCEDURE__NAME:
+			case DskPackage.EPROCEDURE__NAME:
 				return getName();
-			case DscPackage.EPROCEDURE__DSC:
-				return getDsc();
+			case DskPackage.EPROCEDURE__CLASSIFIER:
+				if (resolve) return getClassifier();
+				return basicGetClassifier();
+			case DskPackage.EPROCEDURE__IMPL:
+				return getImpl();
+			case DskPackage.EPROCEDURE__DEPENDENCIES:
+				return getDependencies();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,15 +281,22 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DscPackage.EPROCEDURE__ID:
+			case DskPackage.EPROCEDURE__ID:
 				setId((String)newValue);
 				return;
-			case DscPackage.EPROCEDURE__NAME:
+			case DskPackage.EPROCEDURE__NAME:
 				setName((String)newValue);
 				return;
-			case DscPackage.EPROCEDURE__DSC:
-				getDsc().clear();
-				getDsc().addAll((Collection<? extends EDSC>)newValue);
+			case DskPackage.EPROCEDURE__CLASSIFIER:
+				setClassifier((EDSC)newValue);
+				return;
+			case DskPackage.EPROCEDURE__IMPL:
+				getImpl().clear();
+				getImpl().addAll((Collection<? extends EExecutionUnit>)newValue);
+				return;
+			case DskPackage.EPROCEDURE__DEPENDENCIES:
+				getDependencies().clear();
+				getDependencies().addAll((Collection<? extends EDSC>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -224,14 +310,20 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DscPackage.EPROCEDURE__ID:
+			case DskPackage.EPROCEDURE__ID:
 				setId(ID_EDEFAULT);
 				return;
-			case DscPackage.EPROCEDURE__NAME:
+			case DskPackage.EPROCEDURE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DscPackage.EPROCEDURE__DSC:
-				getDsc().clear();
+			case DskPackage.EPROCEDURE__CLASSIFIER:
+				setClassifier((EDSC)null);
+				return;
+			case DskPackage.EPROCEDURE__IMPL:
+				getImpl().clear();
+				return;
+			case DskPackage.EPROCEDURE__DEPENDENCIES:
+				getDependencies().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -245,12 +337,16 @@ public class EProcedureImpl extends MinimalEObjectImpl.Container implements EPro
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DscPackage.EPROCEDURE__ID:
+			case DskPackage.EPROCEDURE__ID:
 				return ID_EDEFAULT == null ? id != null : !ID_EDEFAULT.equals(id);
-			case DscPackage.EPROCEDURE__NAME:
+			case DskPackage.EPROCEDURE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DscPackage.EPROCEDURE__DSC:
-				return dsc != null && !dsc.isEmpty();
+			case DskPackage.EPROCEDURE__CLASSIFIER:
+				return classifier != null;
+			case DskPackage.EPROCEDURE__IMPL:
+				return impl != null && !impl.isEmpty();
+			case DskPackage.EPROCEDURE__DEPENDENCIES:
+				return dependencies != null && !dependencies.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

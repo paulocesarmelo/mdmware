@@ -1,8 +1,8 @@
 /**
  */
-package dsc.util;
+package dsk.util;
 
-import dsc.*;
+import dsk.*;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
@@ -16,17 +16,17 @@ import org.eclipse.emf.ecore.EObject;
  * The <b>Adapter Factory</b> for the model.
  * It provides an adapter <code>createXXX</code> method for each class of the model.
  * <!-- end-user-doc -->
- * @see dsc.DscPackage
+ * @see Dsk.DskPackage
  * @generated
  */
-public class DscAdapterFactory extends AdapterFactoryImpl {
+public class DskAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static DscPackage modelPackage;
+	protected static DskPackage modelPackage;
 
 	/**
 	 * Creates an instance of the adapter factory.
@@ -34,9 +34,9 @@ public class DscAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DscAdapterFactory() {
+	public DskAdapterFactory() {
 		if (modelPackage == null) {
-			modelPackage = DscPackage.eINSTANCE;
+			modelPackage = DskPackage.eINSTANCE;
 		}
 	}
 
@@ -65,10 +65,10 @@ public class DscAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected DscSwitch<Adapter> modelSwitch =
-		new DscSwitch<Adapter>() {
+	protected DskSwitch<Adapter> modelSwitch =
+		new DskSwitch<Adapter>() {
 			@Override
-			public Adapter casedsk(DSK object) {
+			public Adapter casedsk(Dsk object) {
 				return createdskAdapter();
 			}
 			@Override
@@ -104,13 +104,13 @@ public class DscAdapterFactory extends AdapterFactoryImpl {
 
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsc.DSK <em>dsk</em>}'.
+	 * Creates a new adapter for an object of class '{@link Dsk.dsk <em>dsk</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dsc.DSK
+	 * @see Dsk.dsk
 	 * @generated
 	 */
 	public Adapter createdskAdapter() {
@@ -118,13 +118,13 @@ public class DscAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsc.EProcedure <em>EProcedure</em>}'.
+	 * Creates a new adapter for an object of class '{@link Dsk.EProcedure <em>EProcedure</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dsc.EProcedure
+	 * @see Dsk.EProcedure
 	 * @generated
 	 */
 	public Adapter createEProcedureAdapter() {
@@ -132,13 +132,13 @@ public class DscAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsc.EDSC <em>EDSC</em>}'.
+	 * Creates a new adapter for an object of class '{@link Dsk.EDSC <em>EDSC</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dsc.EDSC
+	 * @see Dsk.EDSC
 	 * @generated
 	 */
 	public Adapter createEDSCAdapter() {
@@ -146,13 +146,13 @@ public class DscAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link dsc.EExecutionUnit <em>EExecution Unit</em>}'.
+	 * Creates a new adapter for an object of class '{@link Dsk.EExecutionUnit <em>EExecution Unit</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see dsc.EExecutionUnit
+	 * @see Dsk.EExecutionUnit
 	 * @generated
 	 */
 	public Adapter createEExecutionUnitAdapter() {
@@ -171,4 +171,4 @@ public class DscAdapterFactory extends AdapterFactoryImpl {
 		return null;
 	}
 
-} //DscAdapterFactory
+} //DskAdapterFactory

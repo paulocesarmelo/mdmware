@@ -1,25 +1,26 @@
 /**
  */
-package dsc;
+package dsk;
 
 import org.eclipse.emf.ecore.EFactory;
 
+import dsk.impl.DskFactoryImpl;
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
  * It provides a create method for each non-abstract class of the model.
  * <!-- end-user-doc -->
- * @see dsc.DscPackage
+ * @see Dsk.DskPackage
  * @generated
  */
-public interface DscFactory extends EFactory {
+public interface DskFactory extends EFactory {
 	/**
 	 * The singleton instance of the factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	DscFactory eINSTANCE = dsc.impl.DscFactoryImpl.init();
+	DskFactory eINSTANCE = DskFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>dsk</em>'.
@@ -28,7 +29,7 @@ public interface DscFactory extends EFactory {
 	 * @return a new object of class '<em>dsk</em>'.
 	 * @generated
 	 */
-	DSK createdsk();
+	Dsk createdsk();
 
 	/**
 	 * Returns a new object of class '<em>EProcedure</em>'.
@@ -64,6 +65,6 @@ public interface DscFactory extends EFactory {
 	 * @return the package supported by this factory.
 	 * @generated
 	 */
-	DscPackage getDscPackage();
+	DskPackage getDskPackage();
 
-} //DscFactory
+} //DskFactory

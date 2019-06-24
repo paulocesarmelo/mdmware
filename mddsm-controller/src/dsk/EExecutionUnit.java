@@ -1,6 +1,6 @@
 /**
  */
-package dsc;
+package dsk;
 
 import org.eclipse.emf.ecore.EObject;
 
@@ -13,11 +13,11 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link dsc.EExecutionUnit#getId <em>Id</em>}</li>
- *   <li>{@link dsc.EExecutionUnit#getBody <em>Body</em>}</li>
+ *   <li>{@link Dsk.EExecutionUnit#getId <em>Id</em>}</li>
+ *   <li>{@link Dsk.EExecutionUnit#getBody <em>Body</em>}</li>
  * </ul>
  *
- * @see dsc.DscPackage#getEExecutionUnit()
+ * @see Dsk.DskPackage#getEExecutionUnit()
  * @model
  * @generated
  */
@@ -32,14 +32,14 @@ public interface EExecutionUnit extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
-	 * @see dsc.DscPackage#getEExecutionUnit_Id()
+	 * @see Dsk.DskPackage#getEExecutionUnit_Id()
 	 * @model
 	 * @generated
 	 */
 	String getId();
 
 	/**
-	 * Sets the value of the '{@link dsc.EExecutionUnit#getId <em>Id</em>}' attribute.
+	 * Sets the value of the '{@link Dsk.EExecutionUnit#getId <em>Id</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Id</em>' attribute.
@@ -58,14 +58,14 @@ public interface EExecutionUnit extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Body</em>' attribute.
 	 * @see #setBody(String)
-	 * @see dsc.DscPackage#getEExecutionUnit_Body()
+	 * @see Dsk.DskPackage#getEExecutionUnit_Body()
 	 * @model required="true"
 	 * @generated
 	 */
 	String getBody();
 
 	/**
-	 * Sets the value of the '{@link dsc.EExecutionUnit#getBody <em>Body</em>}' attribute.
+	 * Sets the value of the '{@link Dsk.EExecutionUnit#getBody <em>Body</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Body</em>' attribute.

@@ -1,11 +1,12 @@
 /**
  */
-package dsc.impl;
+package dsk.impl;
 
-import dsc.DscPackage;
-import dsc.EDSC;
-import dsc.EExecutionUnit;
-import dsc.EKind;
+import dsk.DskPackage;
+import dsk.EDSC;
+import dsk.EKind;
+
+import dsk.common.Parameter;
 
 import java.util.Collection;
 
@@ -31,10 +32,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsc.impl.EDSCImpl#getName <em>Name</em>}</li>
- *   <li>{@link dsc.impl.EDSCImpl#getKind <em>Kind</em>}</li>
- *   <li>{@link dsc.impl.EDSCImpl#getImpl <em>Impl</em>}</li>
- *   <li>{@link dsc.impl.EDSCImpl#getReference <em>Reference</em>}</li>
+ *   <li>{@link dsk.impl.EDSCImpl#getName <em>Name</em>}</li>
+ *   <li>{@link dsk.impl.EDSCImpl#getKind <em>Kind</em>}</li>
+ *   <li>{@link dsk.impl.EDSCImpl#getParameters <em>Parameters</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,24 +81,14 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	protected EKind kind = KIND_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getImpl() <em>Impl</em>}' containment reference.
+	 * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getImpl()
+	 * @see #getParameters()
 	 * @generated
 	 * @ordered
 	 */
-	protected EExecutionUnit impl;
-
-	/**
-	 * The cached value of the '{@link #getReference() <em>Reference</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getReference()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<EDSC> reference;
+	protected EList<Parameter> parameters;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -116,7 +106,7 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DscPackage.Literals.EDSC;
+		return DskPackage.Literals.EDSC;
 	}
 
 	/**
@@ -137,7 +127,7 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.EDSC__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.EDSC__NAME, oldName, name));
 	}
 
 	/**
@@ -158,7 +148,7 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 		EKind oldKind = kind;
 		kind = newKind == null ? KIND_EDEFAULT : newKind;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.EDSC__KIND, oldKind, kind));
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.EDSC__KIND, oldKind, kind));
 	}
 
 	/**
@@ -166,54 +156,11 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EExecutionUnit getImpl() {
-		return impl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetImpl(EExecutionUnit newImpl, NotificationChain msgs) {
-		EExecutionUnit oldImpl = impl;
-		impl = newImpl;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DscPackage.EDSC__IMPL, oldImpl, newImpl);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
+	public EList<Parameter> getParameters() {
+		if (parameters == null) {
+			parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, DskPackage.EDSC__PARAMETERS);
 		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setImpl(EExecutionUnit newImpl) {
-		if (newImpl != impl) {
-			NotificationChain msgs = null;
-			if (impl != null)
-				msgs = ((InternalEObject)impl).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DscPackage.EDSC__IMPL, null, msgs);
-			if (newImpl != null)
-				msgs = ((InternalEObject)newImpl).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DscPackage.EDSC__IMPL, null, msgs);
-			msgs = basicSetImpl(newImpl, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.EDSC__IMPL, newImpl, newImpl));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<EDSC> getReference() {
-		if (reference == null) {
-			reference = new EObjectContainmentEList<EDSC>(EDSC.class, this, DscPackage.EDSC__REFERENCE);
-		}
-		return reference;
+		return parameters;
 	}
 
 	/**
@@ -224,10 +171,8 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DscPackage.EDSC__IMPL:
-				return basicSetImpl(null, msgs);
-			case DscPackage.EDSC__REFERENCE:
-				return ((InternalEList<?>)getReference()).basicRemove(otherEnd, msgs);
+			case DskPackage.EDSC__PARAMETERS:
+				return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -240,14 +185,12 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DscPackage.EDSC__NAME:
+			case DskPackage.EDSC__NAME:
 				return getName();
-			case DscPackage.EDSC__KIND:
+			case DskPackage.EDSC__KIND:
 				return getKind();
-			case DscPackage.EDSC__IMPL:
-				return getImpl();
-			case DscPackage.EDSC__REFERENCE:
-				return getReference();
+			case DskPackage.EDSC__PARAMETERS:
+				return getParameters();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -261,18 +204,15 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DscPackage.EDSC__NAME:
+			case DskPackage.EDSC__NAME:
 				setName((String)newValue);
 				return;
-			case DscPackage.EDSC__KIND:
+			case DskPackage.EDSC__KIND:
 				setKind((EKind)newValue);
 				return;
-			case DscPackage.EDSC__IMPL:
-				setImpl((EExecutionUnit)newValue);
-				return;
-			case DscPackage.EDSC__REFERENCE:
-				getReference().clear();
-				getReference().addAll((Collection<? extends EDSC>)newValue);
+			case DskPackage.EDSC__PARAMETERS:
+				getParameters().clear();
+				getParameters().addAll((Collection<? extends Parameter>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,17 +226,14 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DscPackage.EDSC__NAME:
+			case DskPackage.EDSC__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case DscPackage.EDSC__KIND:
+			case DskPackage.EDSC__KIND:
 				setKind(KIND_EDEFAULT);
 				return;
-			case DscPackage.EDSC__IMPL:
-				setImpl((EExecutionUnit)null);
-				return;
-			case DscPackage.EDSC__REFERENCE:
-				getReference().clear();
+			case DskPackage.EDSC__PARAMETERS:
+				getParameters().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -310,14 +247,12 @@ public class EDSCImpl extends MinimalEObjectImpl.Container implements EDSC {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DscPackage.EDSC__NAME:
+			case DskPackage.EDSC__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case DscPackage.EDSC__KIND:
+			case DskPackage.EDSC__KIND:
 				return kind != KIND_EDEFAULT;
-			case DscPackage.EDSC__IMPL:
-				return impl != null;
-			case DscPackage.EDSC__REFERENCE:
-				return reference != null && !reference.isEmpty();
+			case DskPackage.EDSC__PARAMETERS:
+				return parameters != null && !parameters.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

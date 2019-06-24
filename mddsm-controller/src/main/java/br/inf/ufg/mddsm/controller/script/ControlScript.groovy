@@ -4,9 +4,12 @@ import org.eclipse.emf.compare.Diff
 
 class ControlScript {
 	private final List<Command> commands
+	private final List<String> commandsList;
 
 	ControlScript() {
 		commands = []
+		commandsList = []
+		commandsList << new String("Send")
 	}
 
 	ControlScript leftShift(Diff diff) {

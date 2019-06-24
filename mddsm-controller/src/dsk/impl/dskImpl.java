@@ -1,10 +1,11 @@
 /**
  */
-package dsc.impl;
+package dsk.impl;
 
-import dsc.DscPackage;
-import dsc.EProcedure;
-import dsc.DSK;
+import dsk.DskPackage;
+import dsk.EDSC;
+import dsk.EProcedure;
+import dsk.Dsk;
 
 import java.util.Collection;
 
@@ -30,13 +31,14 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link dsc.impl.dskImpl#getDomain <em>Domain</em>}</li>
- *   <li>{@link dsc.impl.dskImpl#getProcedures <em>Procedures</em>}</li>
+ *   <li>{@link Dsk.impl.dskImpl#getDomain <em>Domain</em>}</li>
+ *   <li>{@link Dsk.impl.dskImpl#getDscs <em>Dscs</em>}</li>
+ *   <li>{@link Dsk.impl.dskImpl#getProcedures <em>Procedures</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
+public class dskImpl extends MinimalEObjectImpl.Container implements Dsk {
 	/**
 	 * The default value of the '{@link #getDomain() <em>Domain</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -56,6 +58,16 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	 * @ordered
 	 */
 	protected String domain = DOMAIN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getDscs() <em>Dscs</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDscs()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EDSC> dscs;
 
 	/**
 	 * The cached value of the '{@link #getProcedures() <em>Procedures</em>}' containment reference list.
@@ -83,7 +95,7 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return DscPackage.Literals.DSK;
+		return DskPackage.Literals.DSK;
 	}
 
 	/**
@@ -104,7 +116,19 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 		String oldDomain = domain;
 		domain = newDomain;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, DscPackage.DSK__DOMAIN, oldDomain, domain));
+			eNotify(new ENotificationImpl(this, Notification.SET, DskPackage.DSK__DOMAIN, oldDomain, domain));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<EDSC> getDscs() {
+		if (dscs == null) {
+			dscs = new EObjectContainmentEList<EDSC>(EDSC.class, this, DskPackage.DSK__DSCS);
+		}
+		return dscs;
 	}
 
 	/**
@@ -114,7 +138,7 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	 */
 	public EList<EProcedure> getProcedures() {
 		if (procedures == null) {
-			procedures = new EObjectContainmentEList<EProcedure>(EProcedure.class, this, DscPackage.DSK__PROCEDURES);
+			procedures = new EObjectContainmentEList<EProcedure>(EProcedure.class, this, DskPackage.DSK__PROCEDURES);
 		}
 		return procedures;
 	}
@@ -127,7 +151,9 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case DscPackage.DSK__PROCEDURES:
+			case DskPackage.DSK__DSCS:
+				return ((InternalEList<?>)getDscs()).basicRemove(otherEnd, msgs);
+			case DskPackage.DSK__PROCEDURES:
 				return ((InternalEList<?>)getProcedures()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -141,9 +167,11 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case DscPackage.DSK__DOMAIN:
+			case DskPackage.DSK__DOMAIN:
 				return getDomain();
-			case DscPackage.DSK__PROCEDURES:
+			case DskPackage.DSK__DSCS:
+				return getDscs();
+			case DskPackage.DSK__PROCEDURES:
 				return getProcedures();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -158,10 +186,14 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case DscPackage.DSK__DOMAIN:
+			case DskPackage.DSK__DOMAIN:
 				setDomain((String)newValue);
 				return;
-			case DscPackage.DSK__PROCEDURES:
+			case DskPackage.DSK__DSCS:
+				getDscs().clear();
+				getDscs().addAll((Collection<? extends EDSC>)newValue);
+				return;
+			case DskPackage.DSK__PROCEDURES:
 				getProcedures().clear();
 				getProcedures().addAll((Collection<? extends EProcedure>)newValue);
 				return;
@@ -177,10 +209,13 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case DscPackage.DSK__DOMAIN:
+			case DskPackage.DSK__DOMAIN:
 				setDomain(DOMAIN_EDEFAULT);
 				return;
-			case DscPackage.DSK__PROCEDURES:
+			case DskPackage.DSK__DSCS:
+				getDscs().clear();
+				return;
+			case DskPackage.DSK__PROCEDURES:
 				getProcedures().clear();
 				return;
 		}
@@ -195,9 +230,11 @@ public class dskImpl extends MinimalEObjectImpl.Container implements DSK {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case DscPackage.DSK__DOMAIN:
+			case DskPackage.DSK__DOMAIN:
 				return DOMAIN_EDEFAULT == null ? domain != null : !DOMAIN_EDEFAULT.equals(domain);
-			case DscPackage.DSK__PROCEDURES:
+			case DskPackage.DSK__DSCS:
+				return dscs != null && !dscs.isEmpty();
+			case DskPackage.DSK__PROCEDURES:
 				return procedures != null && !procedures.isEmpty();
 		}
 		return super.eIsSet(featureID);
