@@ -40,14 +40,7 @@ class TestLoadDSCs {
         
         @BeforeAll
         static void main(String[] args) {
-            
-            /*Manager managerDef = EMFLoader.loadFirst("dsk-comm.xmi", Manager)
-            eventManager = new EventManager()
-            mainManager = new ManagerFactory().createManager(managerDef)
-            resourceManager = mainManager.resourceManager
-            
-            mainManager.start()*/
-            
+                                   
             def model = "dsk.xmi"
             
             //def resModel = modelHandler.load(model.toURI(), DscPackage.eNS_URI, DscPackage.eINSTANCE)
@@ -56,13 +49,7 @@ class TestLoadDSCs {
 			
 			//DSK dsk = (DSK) resModel
            	
-			//EList list = dsk.getProcedures()
-			int i=0
-			
-			/*dsk.getProcedures().each {				
-				println (dsk.getProcedures().get(i).getName())						
-				i++
-			}*/
+			//EList list = dsk.getProcedures()					
 			
 			createRepository()
 			

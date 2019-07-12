@@ -27,7 +27,7 @@ public class ScriptProcessor {
 	IntentModel bestModel = null;
 	
 	//user preference
-	DSC dsc = new DSC("Encrypt", Type.OPER);
+	DSC dsc = new DSC("Send", Type.OPER);
 	
 	public void processor(List<String> commands) {
 		this.commands = commands;
