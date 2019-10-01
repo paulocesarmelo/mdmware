@@ -1,5 +1,7 @@
 package br.inf.ufg.mddsm.controller.script
 
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.EStructuralFeature
 
 class ScriptInterpreter{
 	
@@ -10,6 +12,8 @@ class ScriptInterpreter{
 		/*commands.each{
 			interpret($(it))
 		}*/
+		
+		Command c = new Command()
 		
 		println("Interpreting script... ")
 		
@@ -23,8 +27,15 @@ class ScriptInterpreter{
 		Map metadata = command.valueMetada();
 		
 		switch(command.action()) {
-			case CommandAction.ADD:
+			case CommandAction.ADD: 
 				assert metadata.get("kindInteraction") == "DISTRIBUTED"
+				
+				EObject source = command.source()
+				EStructuralFeature feature = source.eClass().getEStructuralFeature("name")
+				String sourceName = (String)source.eGet(feature)
+				
+				EObject target = command.target()
+				 
 			
 			case CommandAction.DELETE:
 				log.info "Not implemented yet"
