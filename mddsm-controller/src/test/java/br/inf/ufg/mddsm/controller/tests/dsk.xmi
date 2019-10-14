@@ -36,7 +36,8 @@
         dsc="//@dscs.3"/>
   </dscs>
   <dscs name="localNetwork"/>
-  <dscs name="Compress"/>
+  <dscs name="Compress"
+      kind="OPER"/>
   <procedures
       id="001"
       name="SendBasic"
@@ -45,7 +46,7 @@
         body="br.com.ufg.inf.SendBasic"/>
   </procedures>
   <procedures
-      id="003"
+      id="002"
       name="PKIEncrypt"
       classifier="//@dscs.5">
     <impl id="PKIEncrypt"

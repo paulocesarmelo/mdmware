@@ -7,12 +7,15 @@ import java.util.List;
 
 import org.codehaus.commons.compiler.CompileException;
 
+import br.inf.ufg.mddsm.controller.img.Association;
 import br.inf.ufg.mddsm.controller.img.DSC;
 import br.inf.ufg.mddsm.controller.img.Executor;
+import br.inf.ufg.mddsm.controller.img.IMRepository;
 import br.inf.ufg.mddsm.controller.img.IntentModel;
 import br.inf.ufg.mddsm.controller.img.NaiveGenerator;
 import br.inf.ufg.mddsm.controller.img.NaiveSelector;
 import br.inf.ufg.mddsm.controller.img.Negotiate;
+import br.inf.ufg.mddsm.controller.img.Repository;
 import br.inf.ufg.mddsm.controller.img.Type;
 import br.inf.ufg.mddsm.controller.img.NaiveValidator;
 
@@ -26,22 +29,37 @@ public class ScriptProcessor {
 	ArrayList<IntentModel> validModels = null;
 	IntentModel bestModel = null;
 	
-	//user preference
-	DSC dsc = new DSC("Send", Type.OPER);
+	IMRepository IMrepository = IMRepository.getInstance();
 	
-	public void processor(List<String> commands) {
+	
+	public void process(List<String> commands) {
 		this.commands = commands;
 		System.out.println("Processing script...");
-		generateIMs();
+		
+		DSC dsc = new DSC("Send", Type.OPER);
+		
+		generateIMs(dsc);
 	}
 	
-	public void addNFProperties() {
+	public void getCommands(DSC dscAssoc) {
+		
+		List<String> commands = new ArrayList<String>();
+		
+		Repository repo = Repository.getInstance();
+		
+		Association assoc = repo.getAssociationWithDSC(dscAssoc);
+		
+		if(!assoc.equals(null)) {
+			
+			for(DSC dsc : assoc.getDependency()){
+				generateIMs(dsc);
+			}
+			
+		}
 		
 	}
 	
-	
-	
-	public void generateIMs() {
+	public void generateIMs(DSC dsc) {
 	
 		System.out.println("Generating IMs...");
 		
@@ -63,6 +81,8 @@ public class ScriptProcessor {
 			// Find the best model based on cost
 			bestModel = (new NaiveSelector()).getBestModel(validModels);
 		
+			IMrepository.addIM(bestModel);
+			
 			printIMs(matchingModels, bestModel);
 			
 		}
@@ -101,5 +121,8 @@ public class ScriptProcessor {
 		}
 	}
 	
+	public void addNFProperties() {
+		
+	}
 	
 }

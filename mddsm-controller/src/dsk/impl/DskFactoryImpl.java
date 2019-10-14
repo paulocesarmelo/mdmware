@@ -58,8 +58,9 @@ public class DskFactoryImpl extends EFactoryImpl implements DskFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case DskPackage.DSK: return createdsk();
-			case DskPackage.EPROCEDURE: return createEProcedure();
 			case DskPackage.EDSC: return createEDSC();
+			case DskPackage.EASSOCIATION: return createEAssociation();
+			case DskPackage.EPROCEDURE: return createEProcedure();
 			case DskPackage.EEXECUTION_UNIT: return createEExecutionUnit();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -111,9 +112,9 @@ public class DskFactoryImpl extends EFactoryImpl implements DskFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EProcedure createEProcedure() {
-		EProcedureImpl eProcedure = new EProcedureImpl();
-		return eProcedure;
+	public EDSC createEDSC() {
+		EDSCImpl edsc = new EDSCImpl();
+		return edsc;
 	}
 
 	/**
@@ -121,9 +122,19 @@ public class DskFactoryImpl extends EFactoryImpl implements DskFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EDSC createEDSC() {
-		EDSCImpl edsc = new EDSCImpl();
-		return edsc;
+	public EAssociation createEAssociation() {
+		EAssociationImpl eAssociation = new EAssociationImpl();
+		return eAssociation;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EProcedure createEProcedure() {
+		EProcedureImpl eProcedure = new EProcedureImpl();
+		return eProcedure;
 	}
 
 	/**

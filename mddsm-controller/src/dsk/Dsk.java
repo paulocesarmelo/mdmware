@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link Dsk.dsk#getDomain <em>Domain</em>}</li>
  *   <li>{@link Dsk.dsk#getDscs <em>Dscs</em>}</li>
+ *   <li>{@link Dsk.dsk#getAssociations <em>Associations</em>}</li>
  *   <li>{@link Dsk.dsk#getProcedures <em>Procedures</em>}</li>
  * </ul>
  *
@@ -68,6 +69,22 @@ public interface Dsk extends EObject {
 	EList<EDSC> getDscs();
 
 	/**
+	 * Returns the value of the '<em><b>Associations</b></em>' reference list.
+	 * The list contents are of type {@link Dsk.EAssociation}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Associations</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Associations</em>' reference list.
+	 * @see Dsk.DskPackage#getdsk_Associations()
+	 * @model required="true"
+	 * @generated
+	 */
+	EList<EAssociation> getAssociations();
+
+	/**
 	 * Returns the value of the '<em><b>Procedures</b></em>' containment reference list.
 	 * The list contents are of type {@link Dsk.EProcedure}.
 	 * <!-- begin-user-doc -->
@@ -78,7 +95,7 @@ public interface Dsk extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Procedures</em>' containment reference list.
 	 * @see Dsk.DskPackage#getdsk_Procedures()
-	 * @model containment="true"
+	 * @model containment="true" required="true"
 	 * @generated
 	 */
 	EList<EProcedure> getProcedures();

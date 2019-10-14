@@ -36,7 +36,17 @@ public enum EKind implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	OPER(1, "OPER", "OPER");
+	OPER(1, "OPER", "OPER"),
+
+	/**
+	 * The '<em><b>ASSOC</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #ASSOC_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	ASSOC(2, "ASSOC", "ASSOC");
 
 	/**
 	 * The '<em><b>ATTR</b></em>' literal value.
@@ -69,6 +79,21 @@ public enum EKind implements Enumerator {
 	public static final int OPER_VALUE = 1;
 
 	/**
+	 * The '<em><b>ASSOC</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>ASSOC</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #ASSOC
+	 * @model
+	 * @generated
+	 * @ordered
+	 */
+	public static final int ASSOC_VALUE = 2;
+
+	/**
 	 * An array of all the '<em><b>EKind</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -78,6 +103,7 @@ public enum EKind implements Enumerator {
 		new EKind[] {
 			ATTR,
 			OPER,
+			ASSOC,
 		};
 
 	/**
@@ -136,6 +162,7 @@ public enum EKind implements Enumerator {
 		switch (value) {
 			case ATTR_VALUE: return ATTR;
 			case OPER_VALUE: return OPER;
+			case ASSOC_VALUE: return ASSOC;
 		}
 		return null;
 	}

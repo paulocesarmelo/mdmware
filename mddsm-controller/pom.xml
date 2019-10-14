@@ -48,19 +48,19 @@
 			<version>2.7</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>org.eclipse.emf.ecore</artifactId>
-			<version>2.15.0</version>
+    		<groupId>org.eclipse.emf</groupId>
+    		<artifactId>ecore</artifactId>
+    		<version>2.3.0-v200706262000</version>
 		</dependency>
 		<dependency>
 			<groupId>org.eclipse.emf</groupId>
-			<artifactId>org.eclipse.emf.common</artifactId>
-			<version>2.15.0</version>
+			<artifactId>common</artifactId>
+			<version>2.3.0-v200706262000</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>org.eclipse.emf.ecore.xmi</artifactId>
-			<version>2.15.0</version>
+			<groupId>org.eclipse.emf.ecore</groupId>
+			<artifactId>xmi</artifactId>
+			<version>2.3.0-v200706262000</version>
 		</dependency>
 		<dependency>
 			<groupId>com.googlecode.clichemaven</groupId>
@@ -83,13 +83,17 @@
 		    <version>1.9.12</version>
 		</dependency>
 		<dependency>
-			<groupId>org.eclipse.emf</groupId>
-			<artifactId>compare</artifactId>
-			<version>3.0.0</version>
+    		<groupId>org.eclipse.emf</groupId>
+    		<artifactId>compare</artifactId>
+    		<version>3.0.0</version>
 		</dependency>
 	</dependencies>
 
 	<repositories>
+		<repository>
+			<id>jabylon</id>
+			<url>http://www.jabylon.org/maven/</url>
+		</repository>
 		<repository>
 			<id>jcenter</id>
 			<url>https://jcenter.bintray.com/</url>

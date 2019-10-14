@@ -3,6 +3,7 @@
 package dsk.impl;
 
 import dsk.DskPackage;
+import dsk.EAssociation;
 import dsk.EDSC;
 import dsk.EProcedure;
 import dsk.Dsk;
@@ -21,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -33,6 +35,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link Dsk.impl.dskImpl#getDomain <em>Domain</em>}</li>
  *   <li>{@link Dsk.impl.dskImpl#getDscs <em>Dscs</em>}</li>
+ *   <li>{@link Dsk.impl.dskImpl#getAssociations <em>Associations</em>}</li>
  *   <li>{@link Dsk.impl.dskImpl#getProcedures <em>Procedures</em>}</li>
  * </ul>
  *
@@ -68,6 +71,16 @@ public class dskImpl extends MinimalEObjectImpl.Container implements Dsk {
 	 * @ordered
 	 */
 	protected EList<EDSC> dscs;
+
+	/**
+	 * The cached value of the '{@link #getAssociations() <em>Associations</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAssociations()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<EAssociation> associations;
 
 	/**
 	 * The cached value of the '{@link #getProcedures() <em>Procedures</em>}' containment reference list.
@@ -136,6 +149,18 @@ public class dskImpl extends MinimalEObjectImpl.Container implements Dsk {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<EAssociation> getAssociations() {
+		if (associations == null) {
+			associations = new EObjectResolvingEList<EAssociation>(EAssociation.class, this, DskPackage.DSK__ASSOCIATIONS);
+		}
+		return associations;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<EProcedure> getProcedures() {
 		if (procedures == null) {
 			procedures = new EObjectContainmentEList<EProcedure>(EProcedure.class, this, DskPackage.DSK__PROCEDURES);
@@ -171,6 +196,8 @@ public class dskImpl extends MinimalEObjectImpl.Container implements Dsk {
 				return getDomain();
 			case DskPackage.DSK__DSCS:
 				return getDscs();
+			case DskPackage.DSK__ASSOCIATIONS:
+				return getAssociations();
 			case DskPackage.DSK__PROCEDURES:
 				return getProcedures();
 		}
@@ -192,6 +219,10 @@ public class dskImpl extends MinimalEObjectImpl.Container implements Dsk {
 			case DskPackage.DSK__DSCS:
 				getDscs().clear();
 				getDscs().addAll((Collection<? extends EDSC>)newValue);
+				return;
+			case DskPackage.DSK__ASSOCIATIONS:
+				getAssociations().clear();
+				getAssociations().addAll((Collection<? extends EAssociation>)newValue);
 				return;
 			case DskPackage.DSK__PROCEDURES:
 				getProcedures().clear();
@@ -215,6 +246,9 @@ public class dskImpl extends MinimalEObjectImpl.Container implements Dsk {
 			case DskPackage.DSK__DSCS:
 				getDscs().clear();
 				return;
+			case DskPackage.DSK__ASSOCIATIONS:
+				getAssociations().clear();
+				return;
 			case DskPackage.DSK__PROCEDURES:
 				getProcedures().clear();
 				return;
@@ -234,6 +268,8 @@ public class dskImpl extends MinimalEObjectImpl.Container implements Dsk {
 				return DOMAIN_EDEFAULT == null ? domain != null : !DOMAIN_EDEFAULT.equals(domain);
 			case DskPackage.DSK__DSCS:
 				return dscs != null && !dscs.isEmpty();
+			case DskPackage.DSK__ASSOCIATIONS:
+				return associations != null && !associations.isEmpty();
 			case DskPackage.DSK__PROCEDURES:
 				return procedures != null && !procedures.isEmpty();
 		}

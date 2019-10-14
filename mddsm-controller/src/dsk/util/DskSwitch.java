@@ -72,15 +72,21 @@ public class DskSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case DskPackage.EPROCEDURE: {
-				EProcedure eProcedure = (EProcedure)theEObject;
-				T result = caseEProcedure(eProcedure);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case DskPackage.EDSC: {
 				EDSC edsc = (EDSC)theEObject;
 				T result = caseEDSC(edsc);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DskPackage.EASSOCIATION: {
+				EAssociation eAssociation = (EAssociation)theEObject;
+				T result = caseEAssociation(eAssociation);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case DskPackage.EPROCEDURE: {
+				EProcedure eProcedure = (EProcedure)theEObject;
+				T result = caseEProcedure(eProcedure);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -110,21 +116,6 @@ public class DskSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>EProcedure</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>EProcedure</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseEProcedure(EProcedure object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>EDSC</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -136,6 +127,36 @@ public class DskSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseEDSC(EDSC object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EAssociation</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EAssociation</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEAssociation(EAssociation object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>EProcedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>EProcedure</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseEProcedure(EProcedure object) {
 		return null;
 	}
 

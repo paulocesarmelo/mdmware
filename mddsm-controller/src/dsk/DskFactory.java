@@ -4,7 +4,6 @@ package dsk;
 
 import org.eclipse.emf.ecore.EFactory;
 
-import dsk.impl.DskFactoryImpl;
 /**
  * <!-- begin-user-doc -->
  * The <b>Factory</b> for the model.
@@ -20,7 +19,7 @@ public interface DskFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	DskFactory eINSTANCE = DskFactoryImpl.init();
+	DskFactory eINSTANCE = dsk.Dsk.DskFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>dsk</em>'.
@@ -32,15 +31,6 @@ public interface DskFactory extends EFactory {
 	Dsk createdsk();
 
 	/**
-	 * Returns a new object of class '<em>EProcedure</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>EProcedure</em>'.
-	 * @generated
-	 */
-	EProcedure createEProcedure();
-
-	/**
 	 * Returns a new object of class '<em>EDSC</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -48,6 +38,24 @@ public interface DskFactory extends EFactory {
 	 * @generated
 	 */
 	EDSC createEDSC();
+
+	/**
+	 * Returns a new object of class '<em>EAssociation</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EAssociation</em>'.
+	 * @generated
+	 */
+	EAssociation createEAssociation();
+
+	/**
+	 * Returns a new object of class '<em>EProcedure</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>EProcedure</em>'.
+	 * @generated
+	 */
+	EProcedure createEProcedure();
 
 	/**
 	 * Returns a new object of class '<em>EExecution Unit</em>'.

@@ -11,7 +11,7 @@
       <package
             uri="http://www.inf.ufg.br/controller/base"
             class="base.BasePackage"
-            genModel="src/test/resources/base.genmodel"/>
+            genModel="src-old/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -19,7 +19,7 @@
       <package
             uri="http://www.inf.ufg.br/mestrado/controller/base/context"
             class="base.context.ContextPackage"
-            genModel="src/test/resources/base.genmodel"/>
+            genModel="src-old/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -27,7 +27,7 @@
       <package
             uri="http://www.inf.ufg.br/mestrado/controller/base/metadata"
             class="base.metadata.MetadataPackage"
-            genModel="src/test/resources/base.genmodel"/>
+            genModel="src-old/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -35,7 +35,7 @@
       <package
             uri="http://www.inf.ufg.br/mestrado/controller/base/policy"
             class="base.policy.PolicyPackage"
-            genModel="src/test/resources/base.genmodel"/>
+            genModel="src-old/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -43,7 +43,7 @@
       <package
             uri="http://www.inf.ufg.br/mestrado/controller/base/common"
             class="base.common.CommonPackage"
-            genModel="src/test/resources/base.genmodel"/>
+            genModel="src-old/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -51,7 +51,7 @@
       <package
             uri="http://www.inf.ufg.br/mestrado/controller/base/script"
             class="base.script.ScriptPackage"
-            genModel="src/test/resources/base.genmodel"/>
+            genModel="src-old/test/resources/base.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
@@ -59,7 +59,7 @@
       <package
             uri="http://www.inf.ufg.br/mestrado/controller/base/img"
             class="base.img.ImgPackage"
-            genModel="src/test/resources/base.genmodel"/>
+            genModel="src-old/test/resources/base.genmodel"/>
    </extension>
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated dsk -->

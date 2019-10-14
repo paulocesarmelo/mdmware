@@ -5,7 +5,7 @@ import br.inf.ufg.mddsm.controller.manager.SignalInstance
 class ScriptManager{
 	
 	public void process(ControlScript script) {
-		new ScriptInterpreter_old();
+		new ScriptInterpreter();
 		new ScriptProcessor();	
 	}
 	

@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
-Bundle-SymbolicName: mddsm-controller-old;singleton:=true
+Bundle-SymbolicName: mddsm-controller;singleton:=true
 Automatic-Module-Name: mddsm-controller-old
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .

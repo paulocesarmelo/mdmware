@@ -20,7 +20,6 @@ import br.inf.ufg.mddsm.controller.resource.ResourceManager
 import br.inf.ufg.mddsm.controller.script.ControlScript
 import br.inf.ufg.mddsm.controller.script.ScriptInterpreter
 import dsk.Dsk
-import dsk.DskPackage
 import br.inf.ufg.mddsm.controller.img.Type
 
 
@@ -53,7 +52,7 @@ class TestLoadDSCs {
 			
 			createRepository()
 			
-			new ScriptInterpreter().interpreter(new ControlScript())             
+			new ScriptInterpreter().interpret(new ControlScript())             
             
         }
 		

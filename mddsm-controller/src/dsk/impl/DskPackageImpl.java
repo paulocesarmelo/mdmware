@@ -4,10 +4,10 @@ package dsk.impl;
 
 import dsk.DskFactory;
 import dsk.DskPackage;
+import dsk.EAssociation;
 import dsk.EExecutionUnit;
 import dsk.EKind;
 import dsk.EProcedure;
-import dsk.EDSC;
 
 import dsk.common.CommonPackage;
 
@@ -42,14 +42,21 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass eProcedureEClass = null;
+	private EClass edscEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass edscEClass = null;
+	private EClass eAssociationEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass eProcedureEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -164,8 +171,98 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getdsk_Procedures() {
+	public EReference getdsk_Associations() {
 		return (EReference)dskEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getdsk_Procedures() {
+		return (EReference)dskEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEDSC() {
+		return edscEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEDSC_Name() {
+		return (EAttribute)edscEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEDSC_Kind() {
+		return (EAttribute)edscEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEDSC_Parameters() {
+		return (EReference)edscEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getEAssociation() {
+		return eAssociationEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEAssociation_Id() {
+		return (EAttribute)eAssociationEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getEAssociation_Name() {
+		return (EAttribute)eAssociationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEAssociation_Classifier() {
+		return (EReference)eAssociationEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getEAssociation_Dependencies() {
+		return (EReference)eAssociationEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -220,42 +317,6 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 	 */
 	public EReference getEProcedure_Dependencies() {
 		return (EReference)eProcedureEClass.getEStructuralFeatures().get(4);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getEDSC() {
-		return edscEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEDSC_Name() {
-		return (EAttribute)edscEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getEDSC_Kind() {
-		return (EAttribute)edscEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getEDSC_Parameters() {
-		return (EReference)edscEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -325,7 +386,19 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 		dskEClass = createEClass(DSK);
 		createEAttribute(dskEClass, DSK__DOMAIN);
 		createEReference(dskEClass, DSK__DSCS);
+		createEReference(dskEClass, DSK__ASSOCIATIONS);
 		createEReference(dskEClass, DSK__PROCEDURES);
+
+		edscEClass = createEClass(EDSC);
+		createEAttribute(edscEClass, EDSC__NAME);
+		createEAttribute(edscEClass, EDSC__KIND);
+		createEReference(edscEClass, EDSC__PARAMETERS);
+
+		eAssociationEClass = createEClass(EASSOCIATION);
+		createEAttribute(eAssociationEClass, EASSOCIATION__ID);
+		createEAttribute(eAssociationEClass, EASSOCIATION__NAME);
+		createEReference(eAssociationEClass, EASSOCIATION__CLASSIFIER);
+		createEReference(eAssociationEClass, EASSOCIATION__DEPENDENCIES);
 
 		eProcedureEClass = createEClass(EPROCEDURE);
 		createEAttribute(eProcedureEClass, EPROCEDURE__ID);
@@ -333,11 +406,6 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 		createEReference(eProcedureEClass, EPROCEDURE__CLASSIFIER);
 		createEReference(eProcedureEClass, EPROCEDURE__IMPL);
 		createEReference(eProcedureEClass, EPROCEDURE__DEPENDENCIES);
-
-		edscEClass = createEClass(EDSC);
-		createEAttribute(edscEClass, EDSC__NAME);
-		createEAttribute(edscEClass, EDSC__KIND);
-		createEReference(edscEClass, EDSC__PARAMETERS);
 
 		eExecutionUnitEClass = createEClass(EEXECUTION_UNIT);
 		createEAttribute(eExecutionUnitEClass, EEXECUTION_UNIT__ID);
@@ -386,7 +454,19 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 		initEClass(dskEClass, Dsk.class, "dsk", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getdsk_Domain(), ecorePackage.getEString(), "domain", null, 0, 1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getdsk_Dscs(), this.getEDSC(), null, "dscs", null, 0, -1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getdsk_Procedures(), this.getEProcedure(), null, "procedures", null, 0, -1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getdsk_Associations(), this.getEAssociation(), null, "associations", null, 1, -1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getdsk_Procedures(), this.getEProcedure(), null, "procedures", null, 1, -1, Dsk.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(edscEClass, Dsk.EDSC.class, "EDSC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEDSC_Name(), ecorePackage.getEString(), "name", null, 0, 1, Dsk.EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEDSC_Kind(), this.getEKind(), "kind", null, 0, 1, Dsk.EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEDSC_Parameters(), theCommonPackage.getParameter(), null, "parameters", null, 0, -1, Dsk.EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(eAssociationEClass, EAssociation.class, "EAssociation", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getEAssociation_Id(), ecorePackage.getEString(), "id", null, 0, 1, EAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getEAssociation_Name(), ecorePackage.getEString(), "name", null, 0, 1, EAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEAssociation_Classifier(), this.getEDSC(), null, "classifier", null, 0, 1, EAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getEAssociation_Dependencies(), this.getEDSC(), null, "dependencies", null, 1, -1, EAssociation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eProcedureEClass, EProcedure.class, "EProcedure", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEProcedure_Id(), ecorePackage.getEString(), "id", null, 0, 1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -394,11 +474,6 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 		initEReference(getEProcedure_Classifier(), this.getEDSC(), null, "classifier", null, 1, 1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEProcedure_Impl(), this.getEExecutionUnit(), null, "impl", null, 0, -1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getEProcedure_Dependencies(), this.getEDSC(), null, "dependencies", null, 0, -1, EProcedure.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(edscEClass, EDSC.class, "EDSC", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getEDSC_Name(), ecorePackage.getEString(), "name", null, 0, 1, EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getEDSC_Kind(), this.getEKind(), "kind", null, 0, 1, EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getEDSC_Parameters(), theCommonPackage.getParameter(), null, "parameters", null, 0, -1, EDSC.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(eExecutionUnitEClass, EExecutionUnit.class, "EExecutionUnit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getEExecutionUnit_Id(), ecorePackage.getEString(), "id", null, 0, 1, EExecutionUnit.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -408,6 +483,7 @@ public class DskPackageImpl extends EPackageImpl implements DskPackage {
 		initEEnum(eKindEEnum, EKind.class, "EKind");
 		addEEnumLiteral(eKindEEnum, EKind.ATTR);
 		addEEnumLiteral(eKindEEnum, EKind.OPER);
+		addEEnumLiteral(eKindEEnum, EKind.ASSOC);
 
 		// Create resource
 		createResource(eNS_URI);

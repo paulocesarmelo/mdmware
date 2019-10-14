@@ -72,12 +72,16 @@ public class DskAdapterFactory extends AdapterFactoryImpl {
 				return createdskAdapter();
 			}
 			@Override
-			public Adapter caseEProcedure(EProcedure object) {
-				return createEProcedureAdapter();
-			}
-			@Override
 			public Adapter caseEDSC(EDSC object) {
 				return createEDSCAdapter();
+			}
+			@Override
+			public Adapter caseEAssociation(EAssociation object) {
+				return createEAssociationAdapter();
+			}
+			@Override
+			public Adapter caseEProcedure(EProcedure object) {
+				return createEProcedureAdapter();
 			}
 			@Override
 			public Adapter caseEExecutionUnit(EExecutionUnit object) {
@@ -118,20 +122,6 @@ public class DskAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Dsk.EProcedure <em>EProcedure</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Dsk.EProcedure
-	 * @generated
-	 */
-	public Adapter createEProcedureAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link Dsk.EDSC <em>EDSC</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -142,6 +132,34 @@ public class DskAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createEDSCAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Dsk.EAssociation <em>EAssociation</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Dsk.EAssociation
+	 * @generated
+	 */
+	public Adapter createEAssociationAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Dsk.EProcedure <em>EProcedure</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Dsk.EProcedure
+	 * @generated
+	 */
+	public Adapter createEProcedureAdapter() {
 		return null;
 	}
 
