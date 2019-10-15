@@ -19,7 +19,7 @@ public interface DskFactory extends EFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	DskFactory eINSTANCE = dsk.Dsk.DskFactoryImpl.init();
+	DskFactory eINSTANCE = dsk.impl.DskFactoryImpl.init();
 
 	/**
 	 * Returns a new object of class '<em>dsk</em>'.
