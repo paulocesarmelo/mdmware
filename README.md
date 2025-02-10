@@ -22,7 +22,7 @@ MDMWARE was evaluated in various **demonstrative scenarios**, including **Smart 
 ## Author
 
 **Paulo César Ferreira Melo**  
-Ph.D. in Computer Science - Universidade Federal de Goiás (UFG)  
+Ph.D. Student in Computer Science - Universidade Federal de Goiás (UFG)  
 Advisor: Prof. Dr. Fábio Moreira Costa  
 
 ---
