@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base"
+            class="base.impl.BasePackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/context"
+            class="base.context.impl.ContextPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/metadata"
+            class="base.metadata.impl.MetadataPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/autonomic"
+            class="base.autonomic.impl.AutonomicPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/policy"
+            class="base.policy.impl.PolicyPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated base -->
+      <package
+            uri="http://www.inf.ufg.br/mestrado/sb/base/common"
+            class="base.common.impl.CommonPackageImpl"
+            genModel="src/main/resources/model/base.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated adapter -->
+      <package
+            uri="http://www.inf.ufg.br/broker/adapter"
+            class="adapter.AdapterPackage"
+            genModel="src/main/resources/model/adapter.genmodel"/>
+   </extension>
+
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated adapter -->
+      <package
+            uri="http://www.inf.ufg.br/broker/adapter/platform"
+            class="adapter.platform.PlatformPackage"
+            genModel="src/main/resources/model/adapter.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated adapter -->
+      <package
+            uri="http://www.inf.ufg.br/broker/adapter/domain"
+            class="adapter.domain.DomainPackage"
+            genModel="src/main/resources/model/adapter.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated psk -->
+      <package
+            uri="http://www.inf.ufg.br/broker/psk"
+            class="psk.PskPackage"
+            genModel="src/main/resources/model/psk.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated adapter -->
+      <package
+            uri="http://www.inf.ufg.br/controller/dsk"
+            class="dsk.DskPackage"
+            genModel="src/main/resources/model/adapter.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated adapter -->
+      <package
+            uri="http://www.inf.ufg.br/controller/dsk/common"
+            class="dsk.common.CommonPackage"
+            genModel="src/main/resources/model/adapter.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated adapter -->
+      <package
+            uri="http://www.inf.ufg.br/m4md"
+            class="m4md.M4mdPackage"
+            genModel="src/main/resources/model/adapter.genmodel"/>
+   </extension>
+
+</plugin>

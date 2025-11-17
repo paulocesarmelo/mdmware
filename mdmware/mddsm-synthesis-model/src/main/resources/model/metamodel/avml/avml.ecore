@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="avml" nsURI="http://www.inf.ufg.br/m4md/avml" nsPrefix="avml">
+  <eClassifiers xsi:type="ecore:EClass" name="AVSchema" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EDomainSchema">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="avModelID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="Default Value Literal&#x9;"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AVControlSchema" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EControlSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="controllers" eType="#//MainController"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AVDataSchema" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EDataSchema">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="vehicles" upperBound="-1"
+        eType="#//Vehicle" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MainController" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EActor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controllerID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SafetyController" eSuperTypes="#//MainController"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Vehicle" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="velocityConstraint" eType="ecore:EClass http://www.inf.ufg.br/m4md/constraint#//constraint/EConstraintSpecificValue"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="routeConstraint" eType="ecore:EClass http://www.inf.ufg.br/m4md/constraint#//constraint/EConstraintRangeValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="location" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+</ecore:EPackage>

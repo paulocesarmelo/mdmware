@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="ASCII"?>
+<slml:SLSchema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:slml="http://www.inf.ufg.br/m4md/slml">
+  <cs xsi:type="slml:SLControlSchema">
+    <actor xsi:type="slml:ControlCenter"
+        controlCenterID="cc1"/>
+  </cs>
+  <ds xsi:type="slml:SLDataSchema"
+      cs="//@cs">
+    <item xsi:type="slml:SmartLight"
+        >
+      <location/>
+      <color
+          attr="color"/>
+      <chargeLevel/>
+    </item>
+  </ds>
+</slml:SLSchema>
