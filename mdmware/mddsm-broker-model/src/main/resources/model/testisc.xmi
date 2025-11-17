@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<adapter:Adapter
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:adapter="http://www.inf.ufg.br/broker/adapter">
+  <mapper>
+    <componentsRelated
+        id="Lamp"
+        resource="//@platformElements/@resources.0"
+        entity="//@domainElements/@entities.0">
+      <commands
+          capability="//@platformElements/@caps.0"
+          cmd="//@domainElements/@dscs.0"/>
+    </componentsRelated>
+  </mapper>
+  <domainElements>
+    <entities
+        name="SmartLamp"/>
+    <entities
+        commandPriority="1"
+        name="Pole"/>
+    <dscs name="dsc1"/>
+  </domainElements>
+  <platformElements>
+    <resources
+        name="Lamp"
+        uuid="123456"/>
+    <caps name="cap1"
+        value=""/>
+  </platformElements>
+</adapter:Adapter>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="ASCII"?>
+<adapter:Adapter
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:adapter="http://www.inf.ufg.br/broker/adapter">
+  <mapper>
+    <componentsRelated
+        id="lamp"
+        resource="//@platformElements/@resources.0"
+        entity="//@domainElements/@entities.0"/>
+    <function>
+      <parameters
+          name="resource"
+          value2="//@platformElements/@resources.0"/>
+      <parameters/>
+    </function>
+  </mapper>
+  <domainElements>
+    <entities
+        name="smartLamp"/>
+  </domainElements>
+  <platformElements>
+    <resources
+        name="lamp"/>
+  </platformElements>
+</adapter:Adapter>

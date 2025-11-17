@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ASCII"?>
+<adapter:Adapter
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:adapter="http://www.inf.ufg.br/broker/adapter">
+  <mapper>
+    <componentsRelated
+        id="lamp+sl1"
+        resource="//@platformElements/@resources.0"
+        entity="//@domainElements/@entities.0">
+      <commands
+          id="1"
+          capability="//@platformElements/@caps.0"
+          cmd="//@domainElements/@dscs.0"/>
+    </componentsRelated>
+  </mapper>
+  <domainElements>
+    <entities
+        name="Lamp"/>
+    <dscs name="turnOn"
+        kind="OPER"
+        entity="//@domainElements/@entities.0"/>
+    <dscs name="turnOff"
+        kind="OPER"
+        entity="//@domainElements/@entities.0"/>
+  </domainElements>
+  <platformElements>
+    <resources
+        name="SL1"/>
+    <caps name="powerState"/>
+  </platformElements>
+</adapter:Adapter>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="slml" nsURI="http://www.inf.ufg.br/m4md/slml" nsPrefix="slml">
+  <eClassifiers xsi:type="ecore:EClass" name="SLSchema" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EDomainSchema">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="slModelID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SLControlSchema" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EControlSchema"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SLDataSchema" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EDataSchema"/>
+  <eClassifiers xsi:type="ecore:EClass" name="ControlCenter" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EActor">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="controlCenterID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DeviceType" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EDomainSpecificType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Device" abstract="true" eSuperTypes="http://www.inf.ufg.br/m4md/constraint#//EItem">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="deviceID" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="location" eType="ecore:EClass http://www.inf.ufg.br/m4md/constraint#//constraint/EConstraintSpecificValue"
+        containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SmartLight" eSuperTypes="#//Device">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="color" eType="ecore:EClass http://www.inf.ufg.br/m4md/constraint#//EProperty"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chargeLevel" eType="ecore:EClass http://www.inf.ufg.br/m4md/constraint#//EProperty"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="wattage" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="brightness" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="MotionDetector" eSuperTypes="#//Device">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="frameRate" eType="ecore:EClass http://www.inf.ufg.br/m4md/constraint#//EProperty"
+        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="chargeLevel" eType="ecore:EClass http://www.inf.ufg.br/m4md/constraint#//EProperty"
+        containment="true"/>
+  </eClassifiers>
+</ecore:EPackage>

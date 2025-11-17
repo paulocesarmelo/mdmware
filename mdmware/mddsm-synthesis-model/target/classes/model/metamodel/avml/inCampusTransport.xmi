@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ASCII"?>
+<avmlv2:AVSchema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:avmlv2="http://www.inf.ufg.br/m4md/avmlv2"
+    avModelID="inCampusTransport">
+  <cs xsi:type="avmlv2:AVControlSchema">
+    <actor xsi:type="avmlv2:OnBoardComputer"
+        controllerID="onBCController1"
+        processor="i7"
+        ram="512"
+        storage="1024"
+        vehicleID="smartMiniVan1"/>
+  </cs>
+  <ds xsi:type="avmlv2:AVDataSchema"
+      cs="//@cs">
+    <vehicles
+        vehicleID="smartMiniVan1"
+        model="mini van"
+        weight="1.5"
+        passangerCapacity="7">
+      <subItens
+          xsi:type="avmlv2:Camera"
+          cameraID="C1"/>
+      <subItens
+          xsi:type="avmlv2:Radar"
+          radarID="R1"/>
+      <subItens
+          xsi:type="avmlv2:IMU"
+          imuID="I1"/>
+      <subItens
+          xsi:type="avmlv2:GPS"
+          gpsID="G1"/>
+      <subItens
+          xsi:type="avmlv2:LIDAR"
+          lidarID="L1"/>
+      <constraints
+          xsi:type="avmlv2:SpeedLimits"
+          name="30"
+          maxSpeed="30"/>
+      <constraints
+          xsi:type="avmlv2:TrafficRestrictions"
+          name="parking p1"
+          designedParking="parking p1"/>
+      <constraints
+          xsi:type="avmlv2:PedestrianPrioritization"
+          name="50"
+          safeBreakinDistance="50"/>
+      <constraints
+          xsi:type="avmlv2:OvertakingRules"
+          name="200"
+          safeOvertakingDistance="200"/>
+      <constraints
+          xsi:type="avmlv2:LoadingUnloading"
+          name="inf"
+          location="inf"/>
+    </vehicles>
+  </ds>
+</avmlv2:AVSchema>

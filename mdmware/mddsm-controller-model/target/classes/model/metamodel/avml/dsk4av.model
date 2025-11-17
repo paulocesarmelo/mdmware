@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<dsk-v2:Dsk xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:dsk-v2="http://www.inf.ufg.br/controller/dsk-v2" xmi:id="_RoOmILm3Ee2vy9g2aPWbGw" domain="AutonomousVehicle">
+  <dscs xmi:id="_0AvHYLm3Ee2vy9g2aPWbGw" name="startRoute" kind="OPER" entity="_V8kJILm3Ee2vy9g2aPWbGw"/>
+  <dscs xmi:id="_6yOCQLm3Ee2vy9g2aPWbGw" name="startMonitoring" kind="OPER" entity="_V8kJILm3Ee2vy9g2aPWbGw"/>
+  <dscs xmi:id="_lBzNcLm4Ee2vy9g2aPWbGw" name="setMaxSpeed" kind="CONSTR" entity="_V8kJILm3Ee2vy9g2aPWbGw" constraint="_WxWmoLm4Ee2vy9g2aPWbGw"/>
+  <dscs xmi:id="_1oyN0Lm4Ee2vy9g2aPWbGw" name="setBreakpoint" kind="CONSTR"/>
+  <dscs xmi:id="_6ZKzoLm4Ee2vy9g2aPWbGw" name="setPedestrianPriorization" kind="CONSTR" constraint="_8zHGgLm4Ee2vy9g2aPWbGw"/>
+  <entities xmi:id="_V8kJILm3Ee2vy9g2aPWbGw" name="SmartVehicle"/>
+  <entities xmi:id="_nhFIwLm3Ee2vy9g2aPWbGw" name="Camera"/>
+  <entities xmi:id="_odEP4Lm3Ee2vy9g2aPWbGw" name="IMU"/>
+  <entities xmi:id="_qxrW0Lm3Ee2vy9g2aPWbGw" name="Radar"/>
+  <entities xmi:id="_sD5zsLm3Ee2vy9g2aPWbGw" name="GPS"/>
+  <entities xmi:id="_tKu44Lm3Ee2vy9g2aPWbGw" name="LIDAR"/>
+  <entities xmi:id="_urL_ALm3Ee2vy9g2aPWbGw" name="Actuator"/>
+  <entities xmi:id="_weXM0Lm3Ee2vy9g2aPWbGw" name="OnBoardingComputer"/>
+  <entities xmi:id="_yP-7cLm3Ee2vy9g2aPWbGw" name="SafetyController"/>
+  <constraints xmi:id="_WxWmoLm4Ee2vy9g2aPWbGw" name="SpeedLimits"/>
+  <constraints xmi:id="_8zHGgLm4Ee2vy9g2aPWbGw" name="PedestrianPriorization"/>
+</dsk-v2:Dsk>

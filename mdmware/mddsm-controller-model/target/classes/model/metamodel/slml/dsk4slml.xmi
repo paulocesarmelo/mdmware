@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ASCII"?>
+<dsk-v2:Dsk
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:dsk-v2="http://www.inf.ufg.br/controller/dsk-v2">
+  <dscs name="turnOnLight"
+      kind="OPER"
+      entity="//@entities.0"
+      condition="//@events.0 //@events.1">
+    <parameters
+        dsproperties="//@entities.0/@properties.2"
+        name="on"
+        value="true"/>
+  </dscs>
+  <dscs name="turnOffLight"
+      kind="OPER"
+      entity="//@entities.0">
+    <parameters
+        dsproperties="//@entities.0/@properties.2"
+        name="on"
+        value="false"/>
+  </dscs>
+  <dscs name="setNightMode"
+      kind="OPER"
+      entity="//@entities.0">
+    <parameters
+        dsproperties="//@entities.0/@properties.0"
+        name="wattage"
+        value="0.5"/>
+    <parameters
+        dsproperties="//@entities.0/@properties.1"
+        name="brightness"
+        value="0.5"/>
+  </dscs>
+  <dscs name="addSmartLight"
+      kind="OPER"
+      entity="//@entities.0"/>
+  <dscs name="removeSmartLight"
+      kind="OPER"
+      entity="//@entities.0"/>
+  <dscs name="increaseBrightness"
+      kind="OPER"
+      entity="//@entities.0">
+    <parameters
+        dsproperties="//@entities.0/@properties.1"
+        name="brightness"/>
+  </dscs>
+  <dscs name="decreaseBrightness"
+      kind="OPER"
+      entity="//@entities.0">
+    <parameters
+        dsproperties="//@entities.0/@properties.1"
+        name="brightness"/>
+  </dscs>
+  <dscs name="changeFrameRate"
+      kind="OPER"
+      entity="//@entities.1">
+    <parameters
+        dsproperties="//@entities.1/@properties.0"
+        name="frameRate"
+        value="10"/>
+  </dscs>
+  <events id="1"
+      name="whenAddSmartLight"
+      metaCmd="ADD"/>
+  <events name="whenChangeOnProperty"
+      metaCmd="CHANGE"/>
+  <entities
+      name="SmartLight">
+    <properties
+        attr="wattage"/>
+    <properties
+        attr="brightness"/>
+    <properties
+        attr="on"/>
+  </entities>
+  <entities
+      name="Motion Detector">
+    <properties
+        attr="frameRate"/>
+  </entities>
+</dsk-v2:Dsk>

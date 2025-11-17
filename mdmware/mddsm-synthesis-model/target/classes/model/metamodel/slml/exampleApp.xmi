@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="ASCII"?>
+<slml:SLSchema
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:slml="http://www.inf.ufg.br/m4md/slml">
+  <cs xsi:type="slml:SLControlSchema">
+    <actor xsi:type="slml:ControlCenter"/>
+  </cs>
+  <ds xsi:type="slml:SLDataSchema"
+      cs="//@cs">
+    <item xsi:type="slml:SmartLight"
+        deviceID="lamp1">
+      <status
+          attr="status"/>
+      <wattage
+          attr="wattage"/>
+      <brightness
+          attr="brightness"/>
+      <color
+          attr="color"/>
+      <chargeLevel
+          attr="levelCharge"/>
+    </item>
+    <item xsi:type="slml:MotionDetector"
+        deviceID="md1">
+      <frameRate
+          attr="frameRate"/>
+    </item>
+  </ds>
+</slml:SLSchema>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ASCII"?>
+<psk:Psk xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:psk="http://www.inf.ufg.br/broker/psk"
+    platform="InterSCity">
+  <components
+      name="DataCollector"
+      address="http://api.playground.interscity.org/collector/resources">
+    <comm/>
+  </components>
+  <components
+      name="ActuatorController"
+      address="http://api.playground.interscity.org/actuator">
+    <comm/>
+  </components>
+  <components
+      name="ResourceDiscovery"
+      address="http://api.playground.interscity.org/discovery"/>
+</psk:Psk>
